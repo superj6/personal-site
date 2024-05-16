@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <title>Jason's Site</title>
+</head>
+<body>
+  <section id="home-intro">
+    <div class="home-panel">
+      <h1 class="home-panel--title"><a class="main-glow-title" href="/">Jason</a></h1>
+      <%- include('../components/main-nav-list', {navListClass: 'home-panel--nav-list'}); %>
+      <%- include('../components/socials-nav-list', {navListClass: 'home-panel--nav-list'}); %>
+  </section>
+  <%- include('../components/top-nav') %>
+  <section id="about">
+    <h2 class="about--title">Who am I?</h2>
+  </section>
+</body>
+</html>
