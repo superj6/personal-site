@@ -7,8 +7,8 @@ body{
 }
 
 .main-glow-title{
-  color: violet;
-  text-shadow: 1px 1px 16px violet;
+  color: blueviolet;
+  text-shadow: 1px 1px 16px blueviolet;
 }
 
 .main-nav-list > ul{
@@ -19,6 +19,10 @@ body{
 .main-nav-list a{
   text-decoration: none;
   color: inherit;
+}
+
+.main-nav-list a:hover{
+  text-shadow: 1px 1px 8px mistyrose;
 }
 
 .socials-nav-list > ul{
@@ -47,25 +51,27 @@ body{
   white-space: nowrap;
 }
 
-.socials-nav-list li:hover p{
+.socials-nav-list a:hover p{
   visibility: visible;
+  text-shadow: 1px 1px 16px mistyrose;
 }
 
 .top-nav{
   position: sticky;
   top: 0;
   width: 100%;
-  height: 4rem;
-  background-color: black;
+  height: 3rem;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
   z-index: 69;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid mistyrose;
+  border-bottom: 1px solid grey;
 }
 
 .top-nav--title{
-  margin: 0 0.5rem;
-  font-size: 3rem;
+  margin: 0 0 0 0.5rem;
+  font-size: 2.25rem;
 }
 
 .top-nav--title > a{
@@ -75,12 +81,46 @@ body{
 .top-nav--nav-list{
   display: flex;
   list-style: none;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
 }
 
 .top-nav--nav-list > li{
   color: mistyrose;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
+}
+
+.bottom-nav{
+  background-color: black;
+  border-top: 1px solid grey;
+  position: relative;
+  z-index: 69;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: mistyrose;
+  padding: 0.75rem;
+}
+
+.bottom-nav--title{
+  margin: 0;
+}
+
+.bottom-nav--title > a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.bottom-nav--title-wrapper > p{
+  margin: 0;
+}
+
+.bottom-nav--nav-list{
+  display: flex;
+  list-style: none;
+}
+
+.bottom-nav--nav-list > li{
+  margin-left: 1.5rem;
 }
 
 #home-intro{
@@ -88,9 +128,17 @@ body{
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: grey;
+  background-image: url('/static/images/home-intro-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   position: sticky;
   top: 0;
+}
+
+.home-intro--scroll-message{
+  position: fixed;
+  bottom: 1rem;
 }
 
 .home-panel{
@@ -106,6 +154,8 @@ body{
 .home-panel--title{
   font-size: 10rem;
   margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .home-panel--title > a{
@@ -120,21 +170,45 @@ body{
 }
 
 .home-panel--nav-list > li{
-  margin: 0 0.5rem 0 0.5rem;
+  margin: 0 1rem 0 1rem;
   padding: 0.25rem;
   color: mistyrose;
 }
 
 #about{
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
   position: relative;
   z-index: 1;
-  margin: 0;
+  margin: -3rem 0 0 0;
+  padding: 4rem 0 0 0;
+  color: mistyrose;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about--main-wrapper{
+  max-width: 50rem;
+}
+
+.about--main-portrait{
+  height: 50vh;
+  border-radius: 5rem;
 }
 
 .about--title{
-  color: violet;
-  margin: 0;
+  color: blueviolet;
+  margin: 0.5rem 0 0 0;
   padding: 0;
+  font-size: 2.25rem;
+}
+
+#about p{
+  color: mistyrose;
+  font-size: 1.25rem;
+}
+
+#about a{
+  color: violet;
 }
