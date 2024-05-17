@@ -9,6 +9,10 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
+router.get('/about', (req, res) => {
+  res.render('about');
+});
+
 router.get('/resume', (req, res) => {
   res.send('resume');
 });
@@ -18,7 +22,7 @@ router.get('/projects', (req, res) => {
 });
 
 router.get('/blog', (req, res) => {
-  res.send('blog');
+  res.render('blog');
 });
 
 router.get('/problems', (req, res) => {
