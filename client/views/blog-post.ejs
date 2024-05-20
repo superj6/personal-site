@@ -4,7 +4,7 @@
 <body class="default-styles">
   <%- 
     include('../components/blog-page', {
-      blogSide: include('../components/blog-post-nav', {blog: blog}),
+      blogSide: include('../components/blog-post-nav', {slugify: slugify, blog: blog}),
       blogMain: include('../components/blog-render', {md: md, blog: blog, isPreview: false})
     }); 
   %>

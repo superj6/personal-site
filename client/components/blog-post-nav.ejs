@@ -1,3 +1,22 @@
-<nav>
+<nav class="blog-post-nav">
+  <% function headerLists(lines, headType){
+       let headStart = headType + ' ';
+       let kek = (x) => lines.findIndex((str, idx) => idx >= x && str.startsWith(headStart));
+       if(kek(0) === -1) return;
+  %>
+    <ul>
+    <%
+      for(let i = kek(0); i !== -1; i = kek(i + 1)){
+        let curSlug = slugify(lines[i].split(headStart)[1]);
+    %>
+      <li>
+        <a href="#<%= curSlug %>"><%= curSlug %></a>
+        <% headerLists(lines.slice(i + 1, kek(i + 1)), headType + '#'); %>
+      </li>
+    <% } %>
+    </ul>
+  <% } %>
 
+  <h2><a href=""><%= blog.meta.title %></a></h2>
+  <% headerLists(blog.content.split('\n'), '##'); %>
 </nav>

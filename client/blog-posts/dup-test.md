@@ -1,6 +1,6 @@
 ---
 date: 2024-04-19
-name: main-test
+name: dup-test
 title: Dup Test
 topic: clown
 ---

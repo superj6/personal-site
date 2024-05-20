@@ -1,8 +1,7 @@
 const express = require('express');
 const path = require('path');
-const markdownIt = require('markdown-it');
 
-const blog = require('../components/blog')
+const blogHelper = require('../components/blog')
 
 const router = express.Router();
 
@@ -25,14 +24,18 @@ router.get('/projects', (req, res) => {
 });
 
 router.get('/blog', (req, res) => {
-  blog.getBlogs((blogs) => {
-    res.render('blog', {md: markdownIt(), blogs: blogs});
+  blogHelper.getBlogs((blogs) => {
+    res.render('blog', {md: blogHelper.mdRender(false), blogs: blogs});
   });
 });
 
 router.get('/blog/:slug', (req, res) => {
-  blog.getBlog(req.params.slug, (blog) => {
-    res.render('blog-post', {md: markdownIt(), blog: blog});
+  blogHelper.getBlog(req.params.slug, (blog) => {
+    res.render('blog-post', {
+      md: blogHelper.mdRender(true), 
+      slugify: blogHelper.slugify, 
+      blog: blog
+    });
   });
 });
 
