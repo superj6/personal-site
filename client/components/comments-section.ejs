@@ -1,0 +1,33 @@
+<section class="comments-section">
+  <h2>Comments</h2>
+  <dl>
+    <dt><%= comments.length %></dt>
+  </dl>
+  <form class="comments-section--form-wrapper">
+    <input class="comments-section--form-input" placeholder="Name" />
+    <textarea class="comments-section--form-input" maxlength="250" placeholder="Your comment (w/ markup, maxchars 250)"></textarea>
+    <button>Send</button>
+  </form>
+  <ul class="comments-section--comments-list">
+    <% if(comments.length > 0){
+         comments.forEach((comment) => {
+    %>
+      <li>
+        <div class="comments-section--author-wrapper">
+	  <a class="comments-section--comment-author"><%= comment.author %></a>
+	  <dl>
+	    <dt><%= comment.date.toLocaleDateString() %></dt>
+	  </dl>
+        </div>
+        <article><%- md.render(comment.content) %></article>
+      </li>
+    <%  
+        });
+      }else{ 
+    %>
+      <li>
+        <p>No comments? :(</p>
+      </li>
+    <% } %>
+  </ul>
+</section>

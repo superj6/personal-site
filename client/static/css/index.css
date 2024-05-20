@@ -8,7 +8,12 @@ body{
   font-size: 1.25rem;
 }
 
-.default-styles h1,h2,h3,h4,h5,h6{
+.default-styles h1, 
+.default-styles h2, 
+.default-styles h3, 
+.default-styles h4, 
+.default-styles h5,
+.default-styles h6{
   color: blueviolet;
 }
 
@@ -23,6 +28,10 @@ body{
 
 .default-styles a:hover{
   text-decoration: underline;
+}
+
+.default-styles dl{
+  color: violet;
 }
 
 .main-glow-title{
@@ -214,6 +223,7 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: black;
   position: sticky;
   top: 0;
 }
@@ -232,6 +242,7 @@ body{
   align-items: center;
   flex-direction: column;
   background-color: black;
+  max-width: 95vw;
 }
 
 .home-panel--title{
@@ -358,7 +369,8 @@ body{
 .blog-main{
   margin: 0 0 0 16rem;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+
 }
 
 .blog-preview-list{
@@ -403,3 +415,95 @@ body{
   max-height: 40vh;
 }
 
+.comments-section > h2{
+  margin-bottom: 0;
+  color: lightgrey;
+}
+
+.comments-section > dl{
+  margin: 0;
+  border-bottom: 1px dashed #444;
+}
+
+.comments-section--form-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  max-width: 90%;
+  margin: 1rem;
+}
+
+.comments-section--form-input{
+  background: transparent;
+  font-size: 1rem;
+  color: mistyrose;
+  padding: 0.25rem 0.5rem;
+}
+
+.comments-section--form-input::placeholder{
+  color: #bbb;
+}
+
+.comments-section--form-wrapper input{
+  border: none;
+  border-bottom: 1px solid #444;
+}
+
+.comments-section--form-wrapper input:focus{
+  outline: none;
+  border-bottom: 1px solid mistyrose;
+}
+
+.comments-section--form-wrapper textarea{
+  resize: vertical;
+  min-height: 6rem;
+  margin: 0.5rem 0;
+  border-color: #444;
+  border-radius: 0.5rem;
+}
+
+.comments-section--form-wrapper button{
+  width: 5rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #111;
+  color: mistyrose;
+}
+
+.comments-section--comments-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comments-section--comments-list li{
+  width: 90%;
+  max-width: 30rem;
+}
+
+.comments-section--author-wrapper{
+  width: 10rem;
+}
+
+.comments-section--author-wrapper .comments-section--comment-author{
+  color: lightgrey;
+  margin: 0;
+}
+
+.comments-section--author-wrapper > dl{
+  margin: 0;
+  font-size: 0.875rem;
+  border-bottom: 1px dotted grey;
+}
+
+.comments-section--comments-list article{
+  font-size: 1rem;  
+  color: mistyrose;
+  margin: 0.5rem 1rem;
+}
+
+.comments-section--comments-list article *{
+  margin: 0;
+  font-size: inherit;
+}

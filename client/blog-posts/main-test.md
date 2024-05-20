@@ -1,5 +1,5 @@
 ---
-date: 2024-05-18
+date: 2024-05-20
 name: main-test
 title: Main Test
 topic: clown
@@ -13,23 +13,24 @@ This is my first test blog wow!
 
 I hope you **really** liked it *uwu*.
 
-### wow
+### More headers
 
 did you see this one coming
 
-### very cool
+### And more...
 
-or *this*?
+I need to make sure the sid nav works.
 
 ## Me
 
 ![my-portrait](/static/images/my-portrait.jpg)
 
+it's good to make sure images work.
 
-### meow
+### Meow
 
 i like cats
 
-#### nyan
+#### Nyan
 
-neko so kawaii
+neko neko neko

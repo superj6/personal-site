@@ -5,7 +5,7 @@
   <%- 
     include('../components/blog-page', {
       blogSide: include('../components/blog-post-nav', {slugify: slugify, blog: blog}),
-      blogMain: include('../components/blog-render', {md: md, blog: blog, isPreview: false})
+      blogMain: include('../components/blog-post', {md: md, mdAnc: mdAnc, blog: blog, comments: comments})
     }); 
   %>
 </body>

@@ -15,6 +15,7 @@
     "express": "^4.19.2",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.0.1",
+    "markdown-it-dompurify": "^1.1.0",
     "nodemon": "^3.1.0",
     "parse-md": "^2.0.5",
     "sqlite3": "^5.1.7"
