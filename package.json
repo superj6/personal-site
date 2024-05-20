@@ -13,6 +13,9 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "nodemon": "^3.1.0"
+    "markdown-it": "^14.1.0",
+    "nodemon": "^3.1.0",
+    "parse-md": "^2.0.5",
+    "sqlite3": "^5.1.7"
   }
 }

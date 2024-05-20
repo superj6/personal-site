@@ -12,7 +12,7 @@ const server = http.createServer(app);
 app.set('views', path.resolve(__dirname, '../client/views'));
 app.set('view engine', 'ejs');
 
-app.use(routes)
+app.use(routes);
 
 server.listen(port, () => {
   console.log(`Personal-site listening on port ${port}`)

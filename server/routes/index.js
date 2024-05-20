@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 
+const blog = require('../components/blog')
+
 const router = express.Router();
 
 router.use('/static', express.static(path.resolve(__dirname, '../../client/static')));
@@ -22,7 +24,15 @@ router.get('/projects', (req, res) => {
 });
 
 router.get('/blog', (req, res) => {
-  res.render('blog');
+  blog.getBlogs((blogs) => {
+    res.render('blog', {blogs: blogs});
+  });
+});
+
+router.get('/blog/:slug', (req, res) => {
+  blog.getBlog(req.params.slug, (blog) => {
+    res.send(blog.content);
+  });
 });
 
 router.get('/problems', (req, res) => {

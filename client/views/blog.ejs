@@ -1,19 +1,85 @@
-<!DOCTYPE html>
+<% blogs.sort((x, y) => y.meta.date - x.meta.date); %>
+<!DOCTYPE htmil>
 <html lang="en">
 <%- include('../components/main-head', {tabTitle: 'Blog'}); %>
 <body class="default-styles">
   <%- include('../components/top-nav'); %>
   <aside class="blog-side-panel">
-    <h1 class="main-glow-title">Blog</h1>
+    <h1 class="main-glow-title"><a href="/blog">Blog</a></h1>
     <p>Dumb thoughts by me.</p>
     <nav>
-	
-    </nav>
+      <input type="radio" name="blog-nav-sort" id="blog-nav-radio--date" checked />
+      <label for="blog-nav-radio--date">Date</label>
+      <input type="radio" name="blog-nav-sort" id="blog-nav-radio--topic" />
+      <label for="blog-nav-radio--topic">Topic</label>
+      <ul id="blog-nav--date" class="blog-nav--list">
+	<%
+          let yearLists = new Map();
+	  blogs.forEach((blog) => {
+	    let year = blog.meta.date.getFullYear();
+	    let month = blog.meta.date.toLocaleString('default', {month: 'long'});
 
+	    if(!yearLists.has(year)) yearLists.set(year, new Map());
+	    if(!yearLists.get(year).has(month)) yearLists.get(year).set(month, []);
+
+	    yearLists.get(year).get(month).push(blog);
+	  }); 
+	%>
+	<% yearLists.forEach((monthLists, year) => { %>
+	  <li>
+	    <h2><%= year %></h2>
+	    <ul>
+	      <% monthLists.forEach((blogList, month) => { %>
+	        <h3><%= month %></h3>
+	        <ul>
+		  <% blogList.forEach((blog) => { %>
+		    <li>
+		      <a href="/blog/<%= blog.slug %>"><%= blog.meta.name %></a>
+		    </li>
+	          <% }); %>
+	        </ul>
+	      <% }); %>
+            </ul>
+	  </li>
+	<% }); %>
+      </ul>
+      <ul id="blog-nav--topic" class="blog-nav--list">
+	<%
+          let topicLists = new Map(); 
+	  blogs.forEach((blog) => {
+            let topic = blog.meta.topic;
+
+	    if(!topicLists.has(topic)) topicLists.set(topic, []);
+
+	    topicLists.get(topic).push(blog);
+	  }); 
+	%>
+	<% topicLists.forEach((blogList, topic) => { %>
+	  <li>
+	    <h2><%= topic %></h2>
+	    <ul>
+	      <% blogList.forEach((blog) => { %>
+		<li>
+		  <a href="/blog/<%= blog.slug %>"><%= blog.meta.name %></a>
+		</li>
+              <% }); %>
+	    </ul>
+	  </li>
+	<% }); %>
+      </ul>
+    </nav>
     <%- include('../components/aside-bottom-nav'); %>
   </aside>
   <main class="blog-main">
-    <div class="main-glow-title">hi</div>
+    <ul class="blog-main--preview-list">
+      <% blogs.forEach((blog) => { %>
+        <li>
+	  <a class="blog-main--title-link" href="/blog/<%= blog.slug %>"><%- blog.preview.split('\n')[0] %></a>
+	  <%- blog.preview.split('\n').splice(1).join('\n'); %>
+	  <a href="/blog/<%= blog.slug %>">Read More</a>
+	</li>
+      <% }); %>
+    </ul>
   </main>
 </body>
 </html>

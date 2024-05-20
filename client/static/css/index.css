@@ -5,11 +5,33 @@ body{
 .default-styles{
   color: mistyrose;
   background-color: black;
+  font-size: 1.25rem;
+}
+
+.default-styles h1,h2,h3,h4,h5,h6{
+  color: blueviolet;
+}
+
+.default-styles a{
+  color: lightblue;
+  text-decoration: none;
+}
+
+.default-styles a:hover{
+  text-decoration: underline;
 }
 
 .main-glow-title{
   color: blueviolet;
   text-shadow: 1px 1px 16px blueviolet;
+}
+
+.main-glow-title > a{
+  color: inherit;
+}
+
+.main-glow-title > a:hover{
+  text-decoration: none;
 }
 
 .main-nav-list > ul{
@@ -70,13 +92,18 @@ body{
   border-bottom: 1px solid grey;
 }
 
+.top-nav a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-nav a:hover{
+  text-decoration: none;
+}
+
 .top-nav--title{
   margin: 0 0 0 0.5rem;
   font-size: 2.25rem;
-}
-
-.top-nav--title > a{
-  text-decoration: none;
 }
 
 .top-nav--nav-list{
@@ -123,7 +150,7 @@ body{
 }
 
 .bottom-nav--nav-list > li{
-  margin-left: 1.25rem;
+  margin-left: 1rem;
 }
 
 .bottom-nav--nav-list img{
@@ -153,6 +180,7 @@ body{
 
 .aside-bottom-nav--title-wrapper > p{
   margin: 0;
+  font-size: 1rem;
 }
 
 .aside-bottom-nav--nav-list{
@@ -252,40 +280,39 @@ body{
 }
 
 .about--main-wrapper{
-  margin: 0 4rem;
-  max-width: 70rem;
+  width: 80vw;
+  max-width: 60rem;
 }
 
 .about--main-portrait{
-  height: 30rem;
-  border-radius: 5rem;
+  height: 25rem;
+  border-radius: 4rem;
 }
 
 .about--title{
   color: blueviolet;
   margin: 0.5rem 0 0 0;
   padding: 0;
-  font-size: 2.25rem;
 }
 
 .about p{
   color: mistyrose;
-  font-size: 1.25rem;
 }
 
 .about a{
-  color: violet;
+  color: lightblue;
 }
 
 .blog-side-panel{
   position: fixed;
   left: 0;
   height: 100vh;
-  width: 15rem;
+  width: 16rem;
   background-color: black;
   border-right: 1px solid grey;
   box-sizing: border-box;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
+  font-size: 1rem;
 }
 
 .blog-side-panel > h1{
@@ -293,7 +320,52 @@ body{
   margin-bottom: 0;
 }
 
+.blog-side-panel > nav ul{
+  list-style: none;
+  padding-left: 0.75rem;
+}
+
+.blog-side-panel > nav > ul{
+  padding-left: 0.25rem;
+}
+
+.blog-side-panel > nav h2,h3{
+  margin: 0.25rem 0;
+  color: blueviolet;
+}
+
+.blog-nav--list{
+  display: none;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+#blog-nav-radio--date:checked ~ #blog-nav--date{
+  display: block;
+}
+
+#blog-nav-radio--topic:checked ~ #blog-nav--topic{
+  display: block;
+}
+
 .blog-main{
-  margin: 0 0 0 15rem;
-   
+  margin: 0 0 0 16rem;
+  display: flex;
+  justify-content: center; 
+}
+
+.blog-main--preview-list{
+  width: 60vw;
+  max-width: 60rem;
+  list-style: none;
+  padding: 0;
+}
+
+.blog-main--preview-list > li{
+  border-bottom: 1px dashed grey;
+  padding-bottom: 1rem;
+}
+
+.blog-main--preview-list .blog-main--title-link{
+  color: blueviolet;
 }
