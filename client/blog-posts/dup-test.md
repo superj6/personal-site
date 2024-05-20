@@ -1,10 +1,9 @@
 ---
-date: 2024-04-20
-name: dup-test
+date: 2024-04-19
+name: main-test
+title: Dup Test
 topic: clown
 ---
-
-# Dup Test
 
 This is my first test blog wow!
 
@@ -13,3 +12,7 @@ This is my first test blog wow!
 ## Another Section
 
 I hope you **really** liked it *uwu*.
+
+## Me
+
+![my-portrait](/static/images/my-portrait.jpg)

@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const markdownIt = require('markdown-it');
 
 const blog = require('../components/blog')
 
@@ -25,13 +26,13 @@ router.get('/projects', (req, res) => {
 
 router.get('/blog', (req, res) => {
   blog.getBlogs((blogs) => {
-    res.render('blog', {blogs: blogs});
+    res.render('blog', {md: markdownIt(), blogs: blogs});
   });
 });
 
 router.get('/blog/:slug', (req, res) => {
   blog.getBlog(req.params.slug, (blog) => {
-    res.send(blog.content);
+    res.render('blog-post', {md: markdownIt(), blog: blog});
   });
 });
 

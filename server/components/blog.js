@@ -1,10 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const markdownIt = require('markdown-it');
 const parseMd = require('parse-md').default;
 
-
-const md = markdownIt();
 const blogPath = path.resolve(__dirname, '../../client/blog-posts');
 
 function getBlog(slug, cb){
@@ -16,8 +13,7 @@ function getBlog(slug, cb){
   const blog = {
     slug: slug, 
     meta: parsed.metadata,
-    preview: md.render(parsed.content.split('[cut]::')[0]),
-    content: md.render(parsed.content)
+    content: parsed.content
   };
 
   cb(blog);

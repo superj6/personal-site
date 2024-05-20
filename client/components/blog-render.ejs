@@ -1,0 +1,19 @@
+<article class="blog-article">
+  <% if(isPreview){ %>
+    <a class="blog-title-link" href="/blog/<%= blog.slug %>">
+  <% } %>
+    <h1><%= blog.meta.title %></h1>
+  <% if(isPreview){ %> 
+    </a>
+  <% } %>
+  <dl>
+    <dt><%= blog.meta.date.toLocaleDateString() %></dt>
+    <dt><%= blog.meta.topic %></dt>
+  </dl>
+  <div>
+    <%- md.render(isPreview? blog.content.split('[cut]::')[0] : blog.content) %>
+  </div>
+  <% if(isPreview){ %>
+    <a href="/blog/<%= blog.slug %>">Read More</a>
+  <% } %>
+</article>

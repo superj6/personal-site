@@ -1,0 +1,7 @@
+<ul class="blog-preview-list">
+  <% blogs.forEach((blog) => { %>
+    <li>
+      <%- include('../components/blog-render', {md: md, blog: blog, isPreview: true}); %>
+    </li>
+  <% }); %>
+</ul>

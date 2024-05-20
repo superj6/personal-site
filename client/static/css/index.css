@@ -334,6 +334,10 @@ body{
   color: blueviolet;
 }
 
+.blog-home-nav > label{
+  color: violet;
+}
+
 .blog-nav--list{
   display: none;
   overflow-y: auto;
@@ -354,18 +358,39 @@ body{
   justify-content: center; 
 }
 
-.blog-main--preview-list{
-  width: 60vw;
-  max-width: 60rem;
+.blog-preview-list{
   list-style: none;
   padding: 0;
 }
 
-.blog-main--preview-list > li{
-  border-bottom: 1px dashed grey;
-  padding-bottom: 1rem;
+.blog-preview-list > li{
 }
 
-.blog-main--preview-list .blog-main--title-link{
+.blog-preview-list .blog-title-link{
   color: blueviolet;
+}
+
+.blog-article{
+  width: 60vw;
+  max-width: 60rem;
+}
+
+.blog-article h1{
+  margin-bottom: 0;
+  font-size: 2.25rem;
+}
+
+.blog-article dl{
+  display: flex;
+  color: violet;
+  font-size: 1.125rem;
+  border-bottom: 1px dashed dimgrey;
+}
+
+.blog-article dl > dt{
+  margin-right: 1rem;
+}
+
+.blog-article img{
+  max-width: 20rem;
 }
