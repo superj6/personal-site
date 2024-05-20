@@ -32,4 +32,4 @@ i like cats
 
 #### nyan
 
-nekos so kawaii
+neko so kawaii

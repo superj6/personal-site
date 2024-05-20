@@ -41,7 +41,7 @@ function getBlogs(cb){
 
 function mdRender(useAnchor){
   let md = markdownIt();
-  if(useAnchor) md.use(anchor, { slugify });
+  if(useAnchor) md.use(anchor, {slugify, tabIndex: false});
   return md;
 }
 

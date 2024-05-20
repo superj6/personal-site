@@ -269,7 +269,7 @@ body{
 
 .about{
   min-height: 100vh;
-  background: linear-gradient(0.375turn, #050505, #111);
+  background: linear-gradient(0.375turn, #050505, #151515);
   position: relative;
   z-index: 1;
   margin: -3rem 0 0 0;
@@ -312,7 +312,7 @@ body{
   height: 100vh;
   width: 16rem;
 
-  background: linear-gradient(0.375turn, #050505, #111);
+  background: linear-gradient(0.375turn, #050505, #151515);
   box-sizing: border-box;
   padding: 0 1rem;
   font-size: 1rem;
