@@ -318,6 +318,7 @@ body{
 
 .blog-side-panel{
   position: fixed;
+  height: 100%;
   left: 0;
   width: 16rem;
 
