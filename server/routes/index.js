@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const blogHelper = require('../components/blog')
+const commentHelper = require('../components/comments');
 
 const router = express.Router();
 
@@ -30,26 +31,16 @@ router.get('/blog', (req, res) => {
 });
 
 router.get('/blog/:slug', (req, res) => {
-  let tempComments = [
-    {
-      author: 'jason', 
-      date: new Date(1995, 11, 17), 
-      content: '# clown\n wow this is dumb comment'
-    },
-    {
-      author: 'bob',
-      date: new Date(1995, 11, 18),
-      content: 'A longer comment.\n\n ## wow look at this! \n\nisnt my comment so cool lol'
-    }
-  ];
   blogHelper.getBlog(req.params.slug, (blog) => {
-    res.render('blog-post', {
-      md: blogHelper.mdRender(false),
-      mdAnc: blogHelper.mdRender(true),
-      slugify: blogHelper.slugify, 
-      blog: blog,
-      comments: tempComments
-    });
+    commentHelper.getComments(blog.meta.commentsSlug, (e, comments) => {
+      res.render('blog-post', {
+	md: blogHelper.mdRender(false),
+	mdAnc: blogHelper.mdRender(true),
+	slugify: blogHelper.slugify, 
+	blog: blog,
+	comments: comments
+      });
+    });	
   });
 });
 

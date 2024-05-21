@@ -3,6 +3,7 @@ date: 2024-05-20
 name: main-test
 title: Main Test
 topic: clown
+commentsSlug: main-test-comments
 ---
 
 This is my first test blog wow!

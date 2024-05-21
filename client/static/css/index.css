@@ -482,6 +482,10 @@ body{
   max-width: 30rem;
 }
 
+.comments-section--comments-list li > p{
+  color: lightgrey;
+}
+
 .comments-section--author-wrapper{
   width: 10rem;
 }

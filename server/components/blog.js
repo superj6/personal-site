@@ -13,7 +13,7 @@ function getBlog(slug, cb){
   const fileContents = fs.readFileSync(filePath, 'utf8');
 
   const parsed = parseMd(fileContents);
-
+ 
   const blog = {
     slug: slug, 
     meta: parsed.metadata,

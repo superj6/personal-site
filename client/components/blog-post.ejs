@@ -1,4 +1,10 @@
 <div class="blog-post">
   <%- include('../components/blog-render', {md: mdAnc, blog: blog, isPreview: false}); %>
-  <%- include('../components/comments-section', {md: md, comments: comments}); %>
+  <%- include('../components/comments-section', 
+        {
+          md: md, 
+          redirect: `/blog/${blog.slug}`,
+          slug: blog.meta.commentsSlug,
+          comments: comments
+        }); %>
 </div>

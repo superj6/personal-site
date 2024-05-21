@@ -1,12 +1,14 @@
+<% comments.sort((x, y) => y.date - x.date) %>
 <section class="comments-section">
   <h2>Comments</h2>
   <dl>
     <dt><%= comments.length %></dt>
   </dl>
-  <form class="comments-section--form-wrapper">
-    <input class="comments-section--form-input" placeholder="Name" />
-    <textarea class="comments-section--form-input" maxlength="250" placeholder="Your comment (w/ markup, maxchars 250)"></textarea>
-    <button>Send</button>
+  <form action="/api/addcomment?<%= new URLSearchParams({redirect: redirect}) %>" method="post" class="comments-section--form-wrapper">
+    <input type="hidden" name="slug" value="<%= slug %>" />
+    <input type="text" name="username" class="comments-section--form-input" placeholder="Name" required />
+    <textarea name="content" class="comments-section--form-input" maxlength="250" placeholder="Your comment (w/ markup, maxchars 250)" required></textarea>
+    <button type="submit">Send</button>
   </form>
   <ul class="comments-section--comments-list">
     <% if(comments.length > 0){
@@ -14,7 +16,7 @@
     %>
       <li>
         <div class="comments-section--author-wrapper">
-	  <a class="comments-section--comment-author"><%= comment.author %></a>
+	  <a class="comments-section--comment-author"><%= comment.username %></a>
 	  <dl>
 	    <dt><%= comment.date.toLocaleDateString() %></dt>
 	  </dl>
