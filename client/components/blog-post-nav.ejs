@@ -19,4 +19,7 @@
 
   <h2><a href=""><%= blog.meta.title %></a></h2>
   <% headerLists(blog.content.split('\n'), '##'); %>
+  <h3 class="blog-post-nav--comment-header">
+    <a href="#<%= blog.meta.commentsSlug %>">Comments</a>
+  </h3>
 </nav>

@@ -389,6 +389,10 @@ body{
   margin-top: 0;
 }
 
+.blog-post-nav--comment-header > a{
+  color: lightgrey;
+}
+
 .blog-article{
   width: 60vw;
   max-width: 60rem;
@@ -490,9 +494,13 @@ body{
   width: 10rem;
 }
 
-.comments-section--author-wrapper .comments-section--comment-author{
+.comments-section--author-wrapper > a{
   color: lightgrey;
   margin: 0;
+}
+
+.comments-section--author-wrapper > a:hover{
+  text-decoration: none;
 }
 
 .comments-section--author-wrapper > dl{

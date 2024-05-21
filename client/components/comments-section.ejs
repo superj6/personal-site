@@ -1,5 +1,5 @@
 <% comments.sort((x, y) => y.date - x.date) %>
-<section class="comments-section">
+<section id="<%= slug %>" class="comments-section">
   <h2>Comments</h2>
   <dl>
     <dt><%= comments.length %></dt>
@@ -16,7 +16,7 @@
     %>
       <li>
         <div class="comments-section--author-wrapper">
-	  <a class="comments-section--comment-author"><%= comment.username %></a>
+	  <a><%= comment.username %></a>
 	  <dl>
 	    <dt><%= comment.date.toLocaleDateString() %></dt>
 	  </dl>
