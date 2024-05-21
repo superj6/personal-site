@@ -17,7 +17,7 @@ router.get('/about', (req, res) => {
 });
 
 router.get('/resume', (req, res) => {
-  res.send('resume');
+  res.render('resume');
 });
 
 router.get('/projects', (req, res) => {

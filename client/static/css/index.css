@@ -278,7 +278,7 @@ body{
   border: none; 
 }
 
-.about{
+.default-main{
   min-height: 100vh;
   background: linear-gradient(0.375turn, #050505, #151515);
   position: relative;
@@ -291,7 +291,7 @@ body{
   align-items: center;
 }
 
-.about--main-wrapper{
+.about{
   width: 70vw;
   max-width: 60rem;
   background-color: black;
