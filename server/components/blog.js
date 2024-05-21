@@ -1,19 +1,16 @@
 const fs = require('fs');
 const path = require('path');
-const parseMd = require('parse-md').default;
-const markdownIt = require('markdown-it');
-const mdAnchor = require('markdown-it-anchor');
-const mdDompurify = require('markdown-it-dompurify');
+
+const mdHelper = require('./mdHelper');
 
 const blogPath = path.resolve(__dirname, '../../client/blog-posts');
-const slugify = (s) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
 
 function getBlog(slug, cb){
   try{
     const filePath = path.join(blogPath, `${slug}.md`);
     const fileContents = fs.readFileSync(filePath, 'utf8');
 
-    const parsed = parseMd(fileContents);
+    const parsed = mdHelper.parseMd(fileContents);
    
     const blog = {
       slug: slug, 
@@ -41,16 +38,7 @@ function getBlogs(cb){
   });
 }
 
-function mdRender(useAnchor){
-  let md = new markdownIt();
-  md.use(mdDompurify);
-  if(useAnchor) md.use(mdAnchor, {slugify, tabIndex: false});
-  return md;
-}
-
 module.exports = {
   getBlog: getBlog, 
   getBlogs: getBlogs,
-  mdRender: mdRender,
-  slugify: slugify
 };

@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
 
+
+const mdHelper = require('../components/mdHelper')
 const blogHelper = require('../components/blog')
 const commentHelper = require('../components/comments');
+const resumeHelper = require('../components/resume.js');
 
 const router = express.Router();
 
@@ -17,7 +20,9 @@ router.get('/about', (req, res) => {
 });
 
 router.get('/resume', (req, res) => {
-  res.render('resume');
+  resumeHelper.getResume((e, resume) => {
+    res.render('resume', {md: mdHelper.mdRender(false), resume: resume});
+  });
 });
 
 router.get('/projects', (req, res) => {
@@ -26,7 +31,7 @@ router.get('/projects', (req, res) => {
 
 router.get('/blog', (req, res) => {
   blogHelper.getBlogs((blogs) => {
-    res.render('blog', {md: blogHelper.mdRender(false), blogs: blogs});
+    res.render('blog', {md: mdHelper.mdRender(false), blogs: blogs});
   });
 });
 
@@ -35,9 +40,9 @@ router.get('/blog/:slug', (req, res, next) => {
     if(e) next();
     commentHelper.getComments(blog.meta.commentsSlug, (e, comments) => {	
       res.render('blog-post', {
-	md: blogHelper.mdRender(false),
-	mdAnc: blogHelper.mdRender(true),
-	slugify: blogHelper.slugify, 
+	md: mdHelper.mdRender(false),
+	mdAnc: mdHelper.mdRender(true),
+	slugify: mdHelper.slugify, 
 	blog: blog,
 	comments: comments
       });

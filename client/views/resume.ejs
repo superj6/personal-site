@@ -3,7 +3,7 @@
 <%- include('../components/main-head', {tabTitle: 'About'}); %>
 <body>
   <%- include('../components/main-template-wrapper.ejs', {
-    mainContent: include('../components/resume-page.ejs')
+      mainContent: include('../components/resume-page.ejs', {md: md, resume: resume})
   }); %>
 </body>
 </html>

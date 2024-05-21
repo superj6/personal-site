@@ -526,3 +526,25 @@ body{
 .comments-section--comments-list article img{
   max-height: 20rem;
 }
+
+.resume-box{
+  background-color: black;
+  width: 45rem;
+  flex: 1;
+}
+
+.resume-box--resume{
+  display: none;
+  border: 1px solid #444;
+  width: 42rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+#resume-box--render-check:checked ~ #resume-box--rendered{
+  display: block;
+}
+
+#resume-box--render-check:not(:checked) ~ #resume-box--unrendered{
+  display: block;
+}
