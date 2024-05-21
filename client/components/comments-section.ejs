@@ -7,7 +7,7 @@
   <form action="/api/addcomment?<%= new URLSearchParams({redirect: `${redirect}#${slug}`}) %>" method="post" class="comments-section--form-wrapper">
     <input type="hidden" name="slug" value="<%= slug %>" />
     <input type="text" name="username" class="comments-section--form-input" placeholder="Name" required />
-    <textarea name="content" class="comments-section--form-input" maxlength="250" placeholder="Your comment (w/ markup, maxchars 250)" required></textarea>
+    <textarea name="content" class="comments-section--form-input" maxlength="250" placeholder="Your comment (w/ markdown, maxchars 250)" required></textarea>
     <button type="submit">Send</button>
   </form>
   <ul class="comments-section--comments-list">

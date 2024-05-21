@@ -515,7 +515,15 @@ body{
   margin: 0.5rem 1rem;
 }
 
+.comments-section--comments-list article h1{
+  font-size: 1.625rem;
+}
+
 .comments-section--comments-list article *{
-  margin: 0;
-  font-size: inherit;
+  margin: 0.125rem 0;
+  max-width: 100%;
+}
+
+.comments-section--comments-list article img{
+  max-height: 20rem;
 }
