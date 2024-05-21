@@ -9,32 +9,33 @@ const blogPath = path.resolve(__dirname, '../../client/blog-posts');
 const slugify = (s) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
 
 function getBlog(slug, cb){
-  const filePath = path.join(blogPath, `${slug}.md`);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
+  try{
+    const filePath = path.join(blogPath, `${slug}.md`);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
 
-  const parsed = parseMd(fileContents);
- 
-  const blog = {
-    slug: slug, 
-    meta: parsed.metadata,
-    content: parsed.content
-  };
+    const parsed = parseMd(fileContents);
+   
+    const blog = {
+      slug: slug, 
+      meta: parsed.metadata,
+      content: parsed.content
+    };
 
-  cb(blog);
+    cb(false, blog);
+  }catch(e){
+    cb(e, {});
+  }
 }
 
 function getBlogs(cb){
   fs.readdir(blogPath, (err, files) => {
     let blogs = [];
     files.forEach(file => {
-      try{
-	const slug = file.split('.')[0];
-	getBlog(slug, (blog) => {
-	  blogs.push(blog);
-	});
-      }catch(e){
-        console.log(e);
-      }
+      const slug = file.split('.')[0];
+      getBlog(slug, (e, blog) => {
+	if(e) return;
+        blogs.push(blog);
+      });
     });
     cb(blogs);
   });

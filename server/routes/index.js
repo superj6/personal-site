@@ -30,9 +30,10 @@ router.get('/blog', (req, res) => {
   });
 });
 
-router.get('/blog/:slug', (req, res) => {
-  blogHelper.getBlog(req.params.slug, (blog) => {
-    commentHelper.getComments(blog.meta.commentsSlug, (e, comments) => {
+router.get('/blog/:slug', (req, res, next) => {
+  blogHelper.getBlog(req.params.slug, (e, blog) => {
+    if(e) next();
+    commentHelper.getComments(blog.meta.commentsSlug, (e, comments) => {	
       res.render('blog-post', {
 	md: blogHelper.mdRender(false),
 	mdAnc: blogHelper.mdRender(true),
@@ -42,6 +43,10 @@ router.get('/blog/:slug', (req, res) => {
       });
     });	
   });
+});
+
+router.get('/blog/*', (req, res) => {
+  res.redirect('/blog');
 });
 
 router.get('/problems', (req, res) => {
