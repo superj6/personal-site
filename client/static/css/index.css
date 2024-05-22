@@ -531,14 +531,22 @@ body{
   background-color: black;
   width: 45rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-box--wrapper{
+  width: 42rem;
 }
 
 .resume-box--resume{
   display: none;
   border: 1px solid #444;
-  width: 42rem;
+  width: 100%;
   margin: 0;
   padding: 0.5rem;
+  box-sizing: border-box;
 }
 
 #resume-box--render-check:checked ~ #resume-box--rendered{

@@ -1,8 +1,10 @@
 <div class="resume-box">
-  <input type="checkbox" id="resume-box--render-check" checked />
-  <label>Render?</label>
-  <article id="resume-box--rendered" class="resume-box--resume">
-    <%- md.render(resume); %>
-  </article>
-  <pre id="resume-box--unrendered" class="resume-box--resume"><%= resume %></pre>
+  <div class="resume-box--wrapper">
+    <input type="checkbox" id="resume-box--render-check" checked />
+    <label>Render?</label>
+    <article id="resume-box--rendered" class="resume-box--resume">
+      <%- md.render(resume); %>
+    </article>
+    <pre id="resume-box--unrendered" class="resume-box--resume"><%= resume %></pre>
+  </div>
 </div>
