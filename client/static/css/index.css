@@ -302,6 +302,12 @@ body{
   border-radius: 4rem;
 }
 
+.about--center-wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .about--title{
   color: blueviolet;
   margin: 0.5rem 0 0 0;
