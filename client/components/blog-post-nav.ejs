@@ -7,10 +7,10 @@
     <ul>
     <%
       for(let i = kek(0); i !== -1; i = kek(i + 1)){
-        let curSlug = slugify(lines[i].split(headStart)[1]);
+        let curLine = lines[i].split(headStart)[1];
     %>
       <li>
-        <a href="#<%= curSlug %>"><%= curSlug %></a>
+        <a href="#<%= slugify(curLine) %>"><%= curLine %></a>
         <% headerLists(lines.slice(i + 1, kek(i + 1)), headType + '#'); %>
       </li>
     <% } %>

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const mdHelper = require('./mdHelper');
+const mdHelper = require('./md');
 
 const resumePath = path.resolve(__dirname, '../../client/resume');
 

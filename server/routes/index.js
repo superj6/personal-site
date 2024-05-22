@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 
-const mdHelper = require('../components/mdHelper')
+const mdHelper = require('../components/md')
 const blogHelper = require('../components/blog')
 const commentHelper = require('../components/comments');
 const resumeHelper = require('../components/resume.js');
