@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../components/main-head', {tabTitle: 'Blog'}); %>
+<head>
+  <%- include('../components/main-head', {tabTitle: 'Blog'}); %>
+</head>
 <body class="default-styles">
   <% blogs.sort((x, y) => y.meta.date - x.meta.date); %>
   <%- 

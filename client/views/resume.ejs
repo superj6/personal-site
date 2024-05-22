@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../components/main-head', {tabTitle: 'About'}); %>
+<head>
+  <%- include('../components/main-head', {tabTitle: 'About'}); %>
+</head>
 <body>
   <%- include('../components/main-template-wrapper.ejs', {
       mainContent: include('../components/resume-page.ejs', {md: md, resume: resume})
