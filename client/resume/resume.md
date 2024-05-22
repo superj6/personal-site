@@ -4,7 +4,7 @@
 
 jgon@mit.edu  
 github.com/superj6  
-jgon.com  
+jgon.net  
 
 --- 
 
