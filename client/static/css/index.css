@@ -314,6 +314,10 @@ body{
   padding: 0;
 }
 
+.about ul > li p{
+  margin: 0.125rem;
+}
+
 .about p{
   color: mistyrose;
 }
