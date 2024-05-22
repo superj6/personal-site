@@ -416,6 +416,7 @@ body{
 
 .blog-article img{
   max-height: 40vh;
+  max-width: 95%;
 }
 
 .comments-section > h2{
@@ -525,6 +526,7 @@ body{
 
 .comments-section--comments-list article img{
   max-height: 20rem;
+  max-width: 95%;
 }
 
 .resume-box{

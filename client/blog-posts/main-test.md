@@ -24,7 +24,7 @@ I need to make sure the sid nav works.
 
 ## Me
 
-![my-portrait](/static/images/my-portrait.jpg)
+![my-portrait](/static/images/me-room.jpg)
 
 it's good to make sure images work.
 
