@@ -543,8 +543,8 @@ body{
 .resume-box--resume{
   display: none;
   border: 1px solid #444;
-  width: 100%;
-  margin: 0;
+  width: 42rem;
+  margin: 1rem 0;
   padding: 0.5rem;
   box-sizing: border-box;
 }
@@ -555,4 +555,8 @@ body{
 
 #resume-box--render-check:not(:checked) ~ #resume-box--unrendered{
   display: block;
+}
+
+#resume-box--unrendered{
+  white-space: pre-wrap;
 }
