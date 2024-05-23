@@ -539,7 +539,6 @@ body{
 }
 
 .resume-box{
-  background-color: black;
   width: 45rem;
   flex: 1;
   display: flex;
@@ -558,6 +557,7 @@ body{
   margin: 1rem 0;
   padding: 0.5rem;
   box-sizing: border-box;
+  background-color: black;
 }
 
 #resume-box--render-check:checked ~ #resume-box--rendered{
