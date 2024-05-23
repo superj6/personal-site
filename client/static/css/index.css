@@ -329,7 +329,7 @@ body{
   height: 100%;
   left: 0;
   width: 16rem;
-
+  border-right: 1px solid #222;
   background-color: black;
   box-sizing: border-box;
   padding: 0 1rem;
