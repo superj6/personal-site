@@ -7,6 +7,7 @@ body{
   color: mistyrose;
   background-color: black;
   font-size: 1.25rem;
+  font-family: Courier New, monospace;
 }
 
 .default-styles h1, 
@@ -216,7 +217,7 @@ body{
 }
 
 
-#home-intro{
+.home-intro{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +244,11 @@ body{
   align-items: center;
   flex-direction: column;
   background-color: black;
-  max-width: 95vw;
+  max-width: 90vw;
+}
+
+.home-panel a:hover{
+  text-decoration: none;
 }
 
 .home-panel--title{
