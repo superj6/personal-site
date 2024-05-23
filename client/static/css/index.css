@@ -582,11 +582,12 @@ body{
 .projects--tile-list{
   list-style: none;
   margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, 40rem);
   grid-auto-rows: 40rem;
   gap: 3rem;
-  width: 100vw;
+  width: 95vw;
   justify-content: center;
 }
 
