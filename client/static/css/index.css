@@ -5,8 +5,9 @@ body{
 
 .default-styles{
   color: mistyrose;
-  background-color: black;
   font-size: 1.25rem;
+  background: linear-gradient(0.375turn, #080808, #111 60%, #181818 70%, #111);
+  min-height: 100vh;
 }
 
 .default-styles h1, 
@@ -278,7 +279,6 @@ body{
 
 .default-main{
   flex: 1;
-  background: linear-gradient(0.375turn, #080808, #111 60%, #181818 70%, #111);
   position: relative;
   z-index: 1;
   margin: -3rem 0 0 0;
@@ -330,7 +330,7 @@ body{
   left: 0;
   width: 16rem;
 
-  background: linear-gradient(0.375turn, #080808, #111 60%, #181818 70%, #111);
+  background-color: black;
   box-sizing: border-box;
   padding: 0 1rem;
   font-size: 1rem;
