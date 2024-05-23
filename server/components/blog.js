@@ -3,7 +3,7 @@ const path = require('path');
 
 const mdHelper = require('./md');
 
-const blogPath = path.resolve(__dirname, '../../client/blog-posts');
+const blogPath = path.resolve(__dirname, '../../resources/blog-posts');
 
 function getBlog(slug, cb){
   try{
@@ -27,7 +27,7 @@ function getBlog(slug, cb){
 function getBlogs(cb){
   fs.readdir(blogPath, (err, files) => {
     let blogs = [];
-    files.forEach(file => {
+    files.forEach((file) => {
       const slug = file.split('.')[0];
       getBlog(slug, (e, blog) => {
 	if(e) return;

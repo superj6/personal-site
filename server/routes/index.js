@@ -4,6 +4,7 @@ const path = require('path');
 
 const mdHelper = require('../components/md');
 const blogHelper = require('../components/blog');
+const projectsHelper = require('../components/projects');
 const commentHelper = require('../components/comments');
 const resumeHelper = require('../components/resume.js');
 
@@ -26,7 +27,9 @@ router.get('/resume', (req, res) => {
 });
 
 router.get('/projects', (req, res) => {
-  res.render('projects');
+  projectsHelper.getProjects((projects) => {
+    res.render('projects', {projects: projects});
+  });
 });
 
 router.get('/blog', (req, res) => {

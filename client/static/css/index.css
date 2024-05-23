@@ -1,6 +1,6 @@
 body{
   margin: 0;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 .default-styles{
@@ -521,6 +521,7 @@ body{
   font-size: 1rem;  
   color: mistyrose;
   margin: 0.5rem 1rem;
+  word-break: break-all;
 }
 
 .comments-section--comments-list article h1{
@@ -569,4 +570,53 @@ body{
 
 #resume-box--unrendered{
   white-space: pre-wrap;
+}
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.projects--tile-list{
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 40rem);
+  grid-auto-rows: 40rem;
+  gap: 3rem;
+  width: 100vw;
+  justify-content: center;
+}
+
+.projects-tile{
+  border: 1px solid #444;
+  background-color: black;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.projects-tile--preview img{
+  height: 20rem;
+  max-width: 35rem;
+}
+
+.projects-tile--preview iframe{
+  height: 20rem;
+  width: 35rem;
+}
+
+.projects-tile--resources{
+  position: absolute;
+  top: 80%;
+}
+
+.projects-tile--resources > ul{
+  padding: 0;
+  list-style: none;
+}
+
+.projects-tile--resources p{
+  margin: 0;
 }

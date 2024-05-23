@@ -1,9 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const mdHelper = require('./md');
-
-const resumePath = path.resolve(__dirname, '../../client/resume');
+const resumePath = path.resolve(__dirname, '../../resources/resume');
 
 function getResume(cb){
   try{

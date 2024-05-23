@@ -1,0 +1,22 @@
+<li class="projects-tile">
+  <h2><%= project.title %></h2>
+  <p><%= project.description %></p>
+  <div class="projects-tile--preview">
+    <% if(project.image){ %>
+      <img src="<%= project.image %>" alt="project image" />
+    <% }else if(project.iframe){ %>
+      <iframe src="<%= project.iframe %>"></iframe>
+    <% } %>
+  </div>
+  <div class="projects-tile--resources">
+    <h3>Resources</h3>
+    <ul>
+      <% project.resources.forEach((resource) => { %>
+	<li>
+	  <% console.log(resource); %>
+	  <p><%= resource.key %> - <a href="<%= resource.value %>"><%= resource.value %></a></p>
+	</li>
+      <% }); %>
+    </ul>
+  </div>
+</li>
