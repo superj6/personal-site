@@ -221,11 +221,10 @@ body{
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url('/static/images/home-intro-background.png');
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 80%, rgba(255, 255, 255, 0.2) 100%), url('/static/images/home-intro-background.png'), black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: black;
   position: sticky;
   top: 0;
 }
@@ -279,7 +278,7 @@ body{
 
 .default-main{
   flex: 1;
-  background: linear-gradient(0.375turn, #050505, #151515 60%, #252525 70%, #151515);/*linear-gradient(0.375turn, #050505, #151515);*/
+  background: linear-gradient(0.375turn, #050505, #151515 60%, #252525 70%, #151515);
   position: relative;
   z-index: 1;
   margin: -3rem 0 0 0;
