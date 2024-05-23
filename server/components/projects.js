@@ -9,6 +9,7 @@ function getProject(slug, cb){
     const fileContents = fs.readFileSync(filePath, 'utf8');
 
     const project = JSON.parse(fileContents);
+    project.date = new Date(project.date);
 
     cb(false, project);
   }catch(e){

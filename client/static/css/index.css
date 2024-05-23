@@ -601,6 +601,15 @@ body{
   background-color: black;
   padding: 1rem 2rem;
   position: relative;
+  border-radius: 1rem;
+}
+
+.projects-tile > h2{
+  margin-bottom: 0;
+}
+
+.projects-tile > dl{
+  margin: 0;
 }
 
 .projects-tile--preview img{

@@ -1,5 +1,8 @@
 <li class="projects-tile">
   <h2><%= project.title %></h2>
+  <dl>
+    <dt><%= project.date.toLocaleString('default', {year: 'numeric', month: 'long'}); %></dt>
+  </dl>
   <p><%= project.description %></p>
   <div class="projects-tile--preview">
     <% if(project.image){ %>

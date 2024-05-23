@@ -4,6 +4,7 @@
   <%- include('../components/main-head', {tabTitle: 'Projects'}); %>
 </head>
 <body>
+  <% projects.sort((x, y) => y.date - x.date); %>
   <%- include('../components/main-template-wrapper.ejs', {
       mainContent: include('../components/projects-page.ejs', {projects: projects})
   }); %>
