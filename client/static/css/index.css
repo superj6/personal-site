@@ -6,7 +6,7 @@ body{
 .default-styles{
   color: mistyrose;
   font-size: 1.25rem;
-  background: linear-gradient(0.375turn, #040404, #080808 60%, #0d0d0d 70%, #080808);
+  background: linear-gradient(0.375turn, #080808, #111 60%, #181818 70%, #111);
   min-height: 100vh;
 }
 
