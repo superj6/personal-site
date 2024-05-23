@@ -11,12 +11,11 @@
   <div class="projects-tile--resources">
     <h3>Resources</h3>
     <ul>
-      <% project.resources.forEach((resource) => { %>
+      <% for(const [key, value] of Object.entries(project.resources)){ %>
 	<li>
-	  <% console.log(resource); %>
-	  <p><%= resource.key %> - <a href="<%= resource.value %>"><%= resource.value %></a></p>
+	  <p><%= key %> - <a href="<%= value %>"><%= value %></a></p>
 	</li>
-      <% }); %>
+      <% } %>
     </ul>
   </div>
 </li>

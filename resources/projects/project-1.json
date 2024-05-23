@@ -2,14 +2,8 @@
   "title": "Project 1",
   "description": "A very cool description",
   "image": "/static/images/my-portrait.jpg",
-  "resources": [
-    {
-      "key": "Link",
-      "value": "https://google.com"
-    },
-    {
-      "key": "Github",
-      "value": "github.com"
-    }
-  ]
+  "resources": {
+    "Link": "google.com",
+    "Github": "github.com"
+  }
 }
