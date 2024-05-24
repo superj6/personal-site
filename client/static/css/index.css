@@ -232,6 +232,9 @@ body{
 
   .bottom-nav--title-wrapper{
     margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .bottom-nav--nav-list{
