@@ -687,6 +687,10 @@ body{
   align-items: center;
 }
 
+.resume-box--wrapper{
+  width: 100%;
+}
+
 .resume-box--resume{
   display: none;
   border: 1px solid #444;
