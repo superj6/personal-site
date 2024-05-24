@@ -455,6 +455,12 @@ body{
   color: lightblue;
 }
 
+@media (max-width: 50rem){
+  .about{
+    width: 85vw;
+  }
+}
+
 .blog-side-panel{
   position: fixed;
   height: 100%;
