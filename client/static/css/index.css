@@ -129,9 +129,48 @@ body{
   margin-left: 1.5rem;
 }
 
+.top-nav--resize-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-nav--resize-wrap > button{
+  display: none;
+  margin-right: 1rem;
+  border-radius: 0.25rem;
+  color: mistyrose;
+  background-color: #111;
+  border: 1px solid #222;
+  font-size: 1.5rem;
+}
+
+.top-nav--resize-wrap > button:hover{ 
+  text-shadow: 1px 1px 8px mistyrose;
+}
+
+.top-nav--resize-wrap > button:active{
+  background-color: #222;
+}
+
 @media (max-width: 50rem){
+  .top-nav--resize-wrap{
+    width: 100%;
+  }
+
+  .top-nav--resize-wrap > button{
+    display: block;
+  }
+
   .top-nav--nav-list{
     display: none;
+  }
+
+  .top-nav--nav-list__show{
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
