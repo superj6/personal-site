@@ -100,7 +100,7 @@ body{
   min-height: 3rem;
   background: rgba(0,0,0,0.8);
   backdrop-filter: blur(8px);
-  z-index: 69;
+  z-index: 420;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #222;
