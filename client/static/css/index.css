@@ -365,6 +365,10 @@ body{
     font-size: min(5rem, 15vw);
   }
 
+  .home-panel--nav-list{
+    font-size: 2rem;
+  }
+
   .home-panel--nav-list > li{
     margin: 0 1vw;
   }
