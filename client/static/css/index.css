@@ -301,7 +301,6 @@ body{
   background-position: center center;
   position: sticky;
   top: 0;
-  overflow-x: clip;
 }
 
 .home-intro--scroll-message{
@@ -319,6 +318,7 @@ body{
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.8);
   max-width: 90vw;
+  overflow-x: hidden;
 }
 
 .home-panel a:hover{
