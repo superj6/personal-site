@@ -277,7 +277,7 @@ body{
 }
 
 
-@media (max-width: 800px){
+@media (max-width: 50rem){
   .home-panel--title{
     font-size: 5rem;
   }
@@ -301,10 +301,6 @@ body{
   .socials-nav-list > .home-panel--nav-list a{
     position: static;
   }
-
-  .home-intro--scroll-message{
-    position: static;
-  }
 }
 
 @media (max-height: 48rem){
@@ -313,7 +309,7 @@ body{
   }
 }
 
-@media (max-height: 550px){
+@media (max-height: 35rem){
   .home-panel--title{
     font-size: 5vw;
   }
