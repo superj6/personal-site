@@ -354,6 +354,10 @@ body{
     font-size: min(5rem, 15vw);
   }
 
+  .home-panel--nav-list > li{
+    margin: 0;
+  }
+
   .main-nav-list > .home-panel--nav-list{
     flex-direction: column;
   }
@@ -364,10 +368,6 @@ body{
 
   .socials-nav-list > .home-panel--nav-list{
     justify-content: space-around;
-  }
-
-  .socials-nav-list > .home-panel--nav-list > li{
-    margin: 0;
   }
 
   .socials-nav-list > .home-panel--nav-list a{
@@ -392,7 +392,7 @@ body{
 
   .home-panel .main-nav-list > .home-panel--nav-list{
     flex-direction: row;
-    font-size: 3vw;
+    font-size: 4vw;
   }
 
   .home-panel .socials-nav-list img{
