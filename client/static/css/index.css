@@ -2,7 +2,6 @@ body{
   margin: 0;
   padding: 0;
   background-color: black;
-  overflow-x: hidden;
 }
 
 .default-styles{
@@ -321,6 +320,7 @@ body{
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.8);
   max-width: 90vw;
+  margin-top: 0.5rem;
 }
 
 .home-panel a:hover{
@@ -395,7 +395,7 @@ body{
 
   .home-panel .main-nav-list > .home-panel--nav-list{
     flex-direction: row;
-    font-size: 4vw;
+    font-size: 3.75vw;
   }
 
   .home-panel .socials-nav-list img{
