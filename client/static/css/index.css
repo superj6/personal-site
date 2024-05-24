@@ -417,7 +417,7 @@ body{
 .about{
   width: 70vw;
   max-width: 60rem;
-  padding: 1rem 5rem;
+  padding: 1rem 0;
 }
 
 .about--main-portrait{
