@@ -223,6 +223,24 @@ body{
   height: 1.75rem;
 }
 
+@media (max-width: 50rem){
+  .bottom-nav{
+    flex-direction: column;
+  } 
+
+  .bottom-nav--title-wrapper{
+    margin-bottom: 0.5rem;
+  }
+
+  .bottom-nav--nav-list{
+    justify-content: space-around;
+  }
+
+  .bottom-nav--nav-list a{
+    position: static;
+  }
+}
+
 .aside-bottom-nav{
   position: fixed;
   bottom: 1rem;
