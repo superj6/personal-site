@@ -347,7 +347,7 @@ body{
   list-style: none;
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: min(2.5rem, 3.75vw);
 }
 
 .home-panel--nav-list > li{
@@ -356,6 +356,9 @@ body{
   color: mistyrose;
 }
 
+.home-panel .socials-nav-list img{
+  height: 3.25rem;
+}
 
 @media (max-width: 50rem){
   .home-panel--title{
