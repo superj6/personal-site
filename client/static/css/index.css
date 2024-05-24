@@ -721,7 +721,7 @@ body{
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, min(1fr, 40rem));
+  grid-template-columns: repeat(auto-fit, minmax(auto, 40rem));
   grid-auto-rows: 40rem;
   gap: 3rem;
   width: 95vw;
