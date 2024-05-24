@@ -1,10 +1,13 @@
 <%- include('../components/top-nav'); %>
-<aside class="blog-side-panel">
-  <h1 class="main-glow-title"><a href="/blog">Blog</a></h1>
-  <p>Dumb thoughts by me.</p>
-  <%- blogSide %>
-  <%- include('../components/aside-bottom-nav'); %>
-</aside>
+<div class="side-panel close-nav">
+  <aside class="blog-side-panel close-nav--nav-list">
+    <h1 class="main-glow-title"><a href="/blog">Blog</a></h1>
+    <p>Dumb thoughts by me.</p>
+    <%- blogSide %>
+    <%- include('../components/aside-bottom-nav'); %>
+  </aside>
+  <button class="side-panel--button close-nav--drop-ham">&gt;</button>
+</div>
 <main class="blog-main">
   <%- blogMain %>
 </main>
