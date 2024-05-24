@@ -1,6 +1,7 @@
 body{
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 
 .default-styles{
@@ -350,7 +351,7 @@ body{
 
 @media (max-width: 50rem){
   .home-panel--title{
-    font-size: 5rem;
+    font-size: min(5rem, 15vw);
   }
 
   .main-nav-list > .home-panel--nav-list{
@@ -371,6 +372,10 @@ body{
 
   .socials-nav-list > .home-panel--nav-list a{
     position: static;
+  }
+
+  .home-panel .socials-nav-list img{
+    height: min(3rem, 8vw);
   }
 }
 
