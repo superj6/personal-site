@@ -250,7 +250,7 @@ body{
 
 .aside-bottom-nav{
   position: fixed;
-  bottom: 1rem;
+  bottom: 0.25rem;
   z-index: 69;
   padding-bottom: 1rem;
   color: mistyrose;
