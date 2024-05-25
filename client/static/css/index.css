@@ -8,7 +8,7 @@ body{
 .default-styles{
   color: mistyrose;
   background-color: black;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-family: Inter, sans-serif;
 }
 
@@ -201,8 +201,8 @@ body{
 }
 
 .bottom-nav--title-wrapper > h1{
-  margin: 0;
   font-size: 1.25rem;
+  margin: 0;
 }
 
 .bottom-nav--title-wrapper a{
@@ -212,7 +212,6 @@ body{
 
 .bottom-nav--title-wrapper > p{
   margin: 0;
-  font-size: 1rem;
 }
 
 .bottom-nav--nav-list{
@@ -225,7 +224,7 @@ body{
 }
 
 .bottom-nav--nav-list img{
-  height: 1.75rem;
+  height: 1.625rem;
 }
 
 @media (max-width: 50rem){
@@ -664,6 +663,10 @@ body{
     overflow-y: auto;
   }
 
+  .blog-nav--nav-list{
+    max-height: auto;
+  }
+
   .aside-bottom-nav{
     position: static;
   }
@@ -785,7 +788,7 @@ body{
 }
 
 .resume-box{
-  width: 90vw;
+  width: 85vw;
   max-width: 60rem;
   flex: 1;
   display: flex;
