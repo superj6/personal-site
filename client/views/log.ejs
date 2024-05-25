@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../components/main-head', {tabTitle: 'Log'}); %>
+</head>
+<body>
+  <%- include('../components/main-template-wrapper.ejs', {
+      mainContent: include('../components/log-page.ejs')
+  }); %>
+  <%- include('../components/main-scripts') %>
+</body>
+</html>

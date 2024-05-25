@@ -58,11 +58,11 @@ router.get('/blog/*', (req, res) => {
 });
 
 router.get('/problems', (req, res) => {
-  res.send('problems');
+  res.render('problems');
 });
 
 router.get('/log', (req, res) => {
-  res.send('log');
+  res.render('log');
 });
 
 router.get('*', (req, res) => {
