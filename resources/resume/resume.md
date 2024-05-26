@@ -1,32 +1,22 @@
 # Jason Gonzalez
-
 ---
 
-jgon@mit.edu  
-github.com/superj6  
-jgon.net  
-
---- 
-
-## Awards
-
-**USACO Finalist**
-
-Top 20 in nation in USACO programming contest, invited to train at week-long camp.
-
-**Google Codejam Round 3 Qualifier**
+adress str city, Texas || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
+##  Experience
+---
 
 
+**USACO Tutoring**
 
-**PicoCTF nth Place**
+Tutored many students to the highest levels of the USACO programming contest.
 
+**PBjar CTF Team Founder**
 
-
-**CSAW CTF 3rd Place**
-
+Leveraged good placements and advertisement to slowly grow members.
 
 
 ## Projects
+---
 
 **Cybersecurity CTF Problemwriting**
 
@@ -40,53 +30,28 @@ Primarily wrote binary exploit challenges,
 
 **idk**
 
+
+## Awards
+---
+
+- **USACO Finalist** - Top 26/~5000, invited to training camp.
+- **Codeforces Rating 2319**
+- **Google Codejam Round 3 Qualifier**
+- **PicoCTF 13th Place**
+- **CSAW CTF 3rd Place**
+
 ## Skills
+---
 
-**Programming Languages**
-
-- C
-- C++
-- Python
-- Javascript
-- Java
-- x86 Assembly
-
-**WebDev**
-
-- HTML/CSS
-- EJS
-- Expressjs
-
-**ML**
-
-- Pytorch
-- OpenAI api
-
-**Security**
-
-- Binary Exploitation
-  - Ghidra
-  - GDB Peda
-- Cryptography
-  - RSA
-  - Elliptic Curves 
-
-**3D Design**
-
-- Solidworks
-
-## Soft Skills
-
-**USACO Tutoring**
-
-Tutored many students to the highest levels of the USACO programming contest.
-
-**PBjar CTF Team Founder**
-
-Leveraged good placements and advertisement to slowly grow members.
+- **Programming Languages** - C, C++, Python, Javascript, Java, x86 Assembly
+- **Cybersecurity** - Binary Exploitation, Cryptography, Web Exploitation
+- **Web Development** - HTML/CSS, EJS, Expressjs, Nginx, Docker
+- **Machine Learning** - Pytorch
 
 ## Education
+---
 
-2022-2026: Massachusettes Institute of Technology
-
-2020-2022: Gonzalez Homeschool
+- **2022-present:** Massachusettes Institute of Technology
+  - Relevant Courses: 
+- **2020-2022:** Gonzalez Homeschool
+  - Relevant Courses: 
