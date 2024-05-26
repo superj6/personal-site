@@ -1,8 +1,16 @@
 <div class="projects">
   <h1 class="main-glow-title">Projects</h1>
   <ul class="projects--tile-list">
-    <% projects.forEach((project) => { %>
+    <% 
+      if(projects.length){ 
+        projects.forEach((project) => { 
+    %>
       <%- include('./projects-tile', {project: project}); %> 
-    <% }); %>
+    <% 
+        });
+      }else{
+    %>
+      <li><p>None yet :(</p></li> 
+    <% } %>
   </ul>
 </div>
