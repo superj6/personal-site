@@ -22,7 +22,7 @@ router.get('/about', (req, res) => {
 
 router.get('/resume', (req, res) => {
   resumeHelper.getResume((e, resume) => {
-    res.render('resume', {md: mdHelper.mdRender(false), resume: resume});
+    res.render('resume', {md: mdHelper.mdRender(false, false), resume: resume});
   });
 });
 
@@ -34,7 +34,7 @@ router.get('/projects', (req, res) => {
 
 router.get('/blog', (req, res) => {
   blogHelper.getBlogs((blogs) => {
-    res.render('blog', {md: mdHelper.mdRender(false), blogs: blogs});
+    res.render('blog', {md: mdHelper.mdRender(false, false), blogs: blogs});
   });
 });
 
@@ -43,8 +43,8 @@ router.get('/blog/:slug', (req, res, next) => {
     if(e) next();
     commentHelper.getComments(blog.meta.commentsSlug, (e, comments) => {	
       res.render('blog-post', {
-	md: mdHelper.mdRender(false),
-	mdAnc: mdHelper.mdRender(true),
+	md: mdHelper.mdRender(true, false),
+	mdAnc: mdHelper.mdRender(false, true),
 	slugify: mdHelper.slugify, 
 	blog: blog,
 	comments: comments

@@ -5,9 +5,9 @@ const mdDompurify = require('markdown-it-dompurify');
 
 const slugify = (s) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
 
-function mdRender(useAnchor){
+function mdRender(usePurify, useAnchor){
   let md = new markdownIt();
-  md.use(mdDompurify);
+  if(usePurify) md.use(mdDompurify);
   if(useAnchor) md.use(mdAnchor, {slugify, tabIndex: false});
   return md;
 }
