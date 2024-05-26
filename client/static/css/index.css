@@ -859,12 +859,12 @@ body{
 }
 
 .projects-tile--preview img{
-  max-height: 20rem;
+  max-height: 15rem;
   max-width: 95%;
 }
 
 .projects-tile--preview iframe{
-  height: 20rem;
+  height: 18rem;
   width: 95%;
 }
 
