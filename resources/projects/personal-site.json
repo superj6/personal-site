@@ -1,7 +1,7 @@
 {
   "title": "Personal Site",
   "date": "2024-05-20",
-  "description": "You're probably looking at it. Built with EJS frontend and Nodejs backend with sqlite database (for blog comments). Projects displayed from json, resume and blogs rendered from markdown.",
+  "description": "You're probably looking at it. Built with EJS templating and Nodejs backend with sqlite database (for blog comments). Projects displayed from json, resume and blogs rendered from markdown.",
   "iframe": "/",
   "resources": {
     "Link": "https://jgon.net",
