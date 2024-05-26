@@ -45,8 +45,9 @@ Primarily wrote binary exploit challenges,
 
 - **Programming Languages** - C, C++, Python, Javascript, Java, x86 Assembly
 - **Cybersecurity** - Binary Exploitation, Cryptography, Web Exploitation
-- **Web Development** - HTML/CSS, EJS, Expressjs, Nginx, Docker
+- **Web Development** - HTML/CSS, EJS, Nodejs, Nginx, Docker
 - **Machine Learning** - Pytorch
+- **3d Modelling** - Solidworks
 
 ## Education
 ---
