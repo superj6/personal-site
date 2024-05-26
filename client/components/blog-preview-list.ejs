@@ -1,7 +1,17 @@
 <ul class="blog-preview-list">
-  <% blogs.forEach((blog) => { %>
+  <% 
+    if(blogs.length){
+      blogs.forEach((blog) => {
+  %>
     <li>
       <%- include('../components/blog-render', {md: md, blog: blog, isPreview: true}); %>
     </li>
-  <% }); %>
+  <%   
+      }); 
+    }else{
+  %>
+    <li>
+      <p>None yet :(</p>
+    </li>
+  <% } %>
 </ul>
