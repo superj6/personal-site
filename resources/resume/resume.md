@@ -45,4 +45,4 @@ A chrome extension to highlight texts and display predefined and custom queries 
 - **2022-present:** Massachusettes Institute of Technology
   - Relevant Courses: 6.5660 Computer Security, 6.5840 Distributed Systems, 18.701 Algebra I, 18.901 Introduction to Toplogy
 - **2020-2022:** Gonzalez Homeschool
-  - Relevant Courses: (2.087 Equivalent) Engineering Math: Differential Equations and Linear Algebra, (18.02 Equivalent) Multivariable Calculus 
+  - Relevant Courses: (2.087 Equivalent) Engineering Math: Differential Equations and Linear Algebra, (6.1220 Equivalent) Design and Analysis of Algorithms, (18.02 Equivalent) Multivariable Calculus 
