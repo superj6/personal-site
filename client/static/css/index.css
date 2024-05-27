@@ -848,7 +848,7 @@ body{
   position: relative;
   border-radius: 1rem;
   margin: 0.5rem;
-  font-size: min(3vw, 1rem); 
+  font-size: 1rem; 
 }
 
 .projects-tile > h2{
