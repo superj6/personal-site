@@ -1,7 +1,7 @@
 # Jason Gonzalez
 ---
 
-adress str city, Texas || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
+adress str city, Texas || phone # || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
 ##  Experience
 ---
 
