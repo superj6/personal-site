@@ -848,6 +848,7 @@ body{
   position: relative;
   border-radius: 1rem;
   margin: 0.5rem;
+  font-size: min(2.25vw, 1rem);
 }
 
 .projects-tile > h2{
@@ -860,12 +861,12 @@ body{
 }
 
 .projects-tile--preview img{
-  max-height: 18rem;
+  max-height: min(50vw, 18rem);
   max-width: 95%;
 }
 
 .projects-tile--preview iframe{
-  height: 18rem;
+  height: min(50vw, 18rem);
   width: 95%;
 }
 
