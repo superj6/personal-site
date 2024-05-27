@@ -57,14 +57,6 @@ router.get('/blog/*', (req, res) => {
   res.redirect('/blog');
 });
 
-/*router.get('/problems', (req, res) => {
-  res.render('problems');
-});*/
-
-/*router.get('/log', (req, res) => {
-  res.render('log');
-});*/
-
 router.get('*', (req, res) => {
   res.redirect('/');
 });
