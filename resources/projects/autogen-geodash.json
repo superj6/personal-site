@@ -1,0 +1,9 @@
+{
+  "title": "Autogen Geodash",
+  "date": "2024-06-22",
+  "description": "An opengl simplified version of the 2d game geometrydash that autogenerates level maps. During gameplay all possible upcoming player positions are simulated to ensure the level is always beatable.",
+  "image": "/static/images/autogen-geodash-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/autogen-geodash"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Selection GPT Chrome Extension",
+  "date": "2024-03-29",
+  "description": "A chrome extension that allows you to easily process selected text in a sidepanel or popup with gpt queries. Pre-defined summary and quiz functionality or can insert custom prompt. Uses chatgpt api, insert your own api key.",
+  "image": "/static/images/chrome-ext-select-gpt-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/chrome-ext-selection-gpt"
+  }
+}

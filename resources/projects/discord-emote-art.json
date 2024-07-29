@@ -1,0 +1,9 @@
+{
+  "title": "Emote Art Discord Bot",
+  "date": "2024-06-29",
+  "description": "Discord bot to generate large-font words out of emojis.",
+  "image": "/static/images/discord-emote-art-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/discord-emote-art"
+  }
+}

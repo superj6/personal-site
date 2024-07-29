@@ -1,0 +1,10 @@
+{
+  "title": "Geoguess IRL",
+  "date": "2024-07-03",
+  "description": "Inspired by the game geoguessr, a flutter mobile app where within a radius of your gps location are given a random image provided by google maps api and have to attempt to physically walk as close to the location as possible. Uses nodejs server to store account information and look up other's stats.",
+  "image": "/static/images/geoguess-irl-screenshot.jpg",
+  "resources": {
+    "App Github": "https://github.com/superj6/geoguess_irl",
+    "Server Github": "https://github.com/superj6/geoguess-irl-server"
+  }
+}
