@@ -1,0 +1,9 @@
+{
+  "title": "Youtube Channel",
+  "date": "2022-01-22",
+  "description": "Occasionally record screencasts or short clips of competitive programming, math, CTF, or related topics.",
+  "image": "/static/images/youtube-channel-screenshot.png",
+  "resources": {
+    "Link": "https://www.youtube.com/@superjgon"
+  }
+}
