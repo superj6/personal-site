@@ -1,0 +1,9 @@
+{
+  "title": "WaveLength",
+  "date": "2016-07-21",
+  "description": "My first bigger 'real' programming project. Prototype of java jframe game revolving around navigating a light waves and dodging electrons. Seems i did not finish adding object collision. The slow wave generation was my first realization programming is not infinitely fast, but did not fully understand until I started usaco.",
+  "image": "/static/images/wavelength-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/WaveLength"
+  }
+}
