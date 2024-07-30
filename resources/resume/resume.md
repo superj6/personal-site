@@ -1,34 +1,45 @@
 # Jason Gonzalez
 ---
 
-adress str city, Texas || phone # || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
+911 Sonora Drive Allen, Texas || +14693638197 || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
 ##  Experience
 ---
 
-**Cybersecurity CTF Problemwriting**
+**Cybersecurity CTF Problemwriting** (2021-2023)
 
-Wrote for various CTF contests, primarily writing binary exploitation challenges in C with python test exploits. For PBjarCTF and LITCTF I taught proper contest organization and problem setup to teams involved, helped setup Google Cloud infrastructure. 
+Primarily writing binary exploitation challenges in C with python test exploits. For PBjarCTF (<https://github.com/pbjar>) and LITCTF (<https://github.com/LEXMACS>) I taught proper contest organization and problem setup to teams involved, helped setup Google Cloud infrastructure. Also wrote for KQCTF and idekCTF. 
 
-**USACO Tutoring**
+**USACO Tutoring** (2022-2023)
 
-Independently tutored many students to reach the highest levels of the USACO programming contest. 
+Independently tutored many students through online meetings to reach the highest levels of the USACO programming contest. 
 
 ## Projects
 ---
 
-**GPT Chrome Extension** (<https://github.com/superj6/chrome-ext-selection-gpt>)
+**Geoguess IRL Mobile App** (<https://github.com/superj6/geoguess-irl>)
 
-A chrome extension to highlight texts and display predefined and custom queries through ChatGPT API, including summaries and quizzes. Created to help study.
+Inspired by the game geoguessr, a flutter mobile app where within a radius of your gps location are given a random image provided by google maps api and have to attempt to physically walk as close to the location as possible. Use a nodejs server to store account information and look up other's stats.
 
+**Autogen Geodash** (<https://github.com/superj6/autogen-geodash>)
+
+A C++ OpenGL simplified version of the 2d game Geometry Dash that autogenerates level maps. During gameplay all possible upcoming player positions are simulated to ensure the level is always beatable.
+
+**DNQ Attention** (<https://github.com/superj6/dnq-attention>)
+
+Pytorch RNN model with attention for translating English to Spanish. Experimented with custom attention mechanism that queryies relevant info continually merging halves rather than comparing all terms at once.
+
+**Popup Quiz Chrome Extension** (<https://github.com/superj6/chrome-ext-quiz>)
+
+A chrome extension that generates popup quizzes at random intervals based on flashcards sourced by user-provided quizlet links. To scrape links in browser and work around CORS, I opened link in iframe and inserted content-script that scrapes flashcards and sends to background worker. Published on Chrome Webstore.
 
 ## Awards
 ---
 
-- **USACO Finalist** - Top 26 rank, invited to training camp.
-- **Codeforces Rating 2319**
-- **Google Codejam Round 3 Qualifier**
-- **PicoCTF 13th Place**
-- **CSAW CTF 3rd Place**
+- **USACO Finalist 2021** - Top 26 rank in national HS algorithm contest, invited to training camp.
+- **Codeforces Max Rating 2319** - Top 1% elo ration in international algorithm contests, account "SuperJ6".
+- **Google Codejam Round 3 Qualifier 2022** - Top 1000 out of ~30000 in algorithm contest.
+- **PicoCTF 2022 13th Place** - Cybersecurity CTF, ~7500 teams, competed on team "PeanutButterJar". 
+- **CSAW CTF Finals 2022 3rd Place** - Cybersecurity CTF, ~850 teams in qualifier, competed on team "idek".
 
 ## Skills
 ---
