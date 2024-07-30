@@ -1,0 +1,9 @@
+{
+  "title": "Competitive Programming Solutions",
+  "date": "2021-01-01",
+  "description": "A collection of a significant portion of my competitive programming solves. Mostly OI problems, 1000's of solutions.",
+  "image": "/static/images/cp-code-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/CPcode"
+  }
+}

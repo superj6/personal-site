@@ -4,6 +4,7 @@
   "description": "Discord bot to generate large-font words out of emojis.",
   "image": "/static/images/discord-emote-art-screenshot.png",
   "resources": {
+    "Invite": "https://discord.com/oauth2/authorize?client_id=1255901168601923674&permissions=264192&scope=bot",
     "Github": "https://github.com/superj6/discord-emote-art"
   }
 }

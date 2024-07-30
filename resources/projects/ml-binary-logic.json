@@ -1,0 +1,9 @@
+{
+  "title": "ML Binary Logic",
+  "date": "2024-05-01",
+  "description": "Pytorch experiment to simulate a few binary logic operations through minimal neural networks.",
+  "image": "/static/images/ml-binary-logic-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/ml-binary-logic"
+  }
+}

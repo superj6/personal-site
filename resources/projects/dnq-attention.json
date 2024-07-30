@@ -1,0 +1,9 @@
+{
+  "title": "DNQ Attention",
+  "date": "2024-05-10",
+  "description": "Pytorch RNN model w/ attention for translating english to spanish. Experiment with custom attention mechanism through querying relevant info by merging halves.",
+  "image": "/static/images/dnq-attention-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/dnq-attention"
+  }
+}

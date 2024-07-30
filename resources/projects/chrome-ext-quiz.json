@@ -4,6 +4,7 @@
   "description": "A chrome extension that generates popup quizzes at random intervals based on flashcards scraped with content-script in user-provided quizlet links.",
   "image": "/static/images/chrome-ext-quiz-screenshot.png",
   "resources": {
+    "Install": "https://chromewebstore.google.com/detail/quiz-popper/pneelpkcpdphalcoajhobdflgaiofaml",
     "Github": "https://github.com/superj6/chrome-ext-quiz"
   }
 }

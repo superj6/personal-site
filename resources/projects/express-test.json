@@ -1,0 +1,9 @@
+{
+  "title": "Express Test Site",
+  "date": "2024-02-02",
+  "description": "A conglomeration of personal web experiments to learn some techniques w/ a nodejs backend. Includes authentication, sockets, dynamic pages, react w/ webpack, custom svgs, etc.",
+  "image": "/static/images/express-test-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/express-test"
+  }
+}
