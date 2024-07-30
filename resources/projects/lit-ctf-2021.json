@@ -1,0 +1,11 @@
+{
+  "title": "LIT CTF 2021",
+  "date": "2021-07-28",
+  "description": "Helped write large portion of challenges and set up infrastructure for LITCTF 21. Primarily wrote binary exploitation.",
+  "iframe": "https://lit.lhsmathcs.org/archive",
+  "resources": {
+    "Link": "https://lit.lhsmathcs.org",
+    "CTFTime": "https://ctftime.org/event/1398",
+    "Github": "https://github.com/LexMACS/LIT-CTF-2021"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "PBjar CTF 2021",
+  "date": "2021-09-15",
+  "description": "CTF organized by my main team 'PeanutButter.jar'. Helped organize, setup, and write signifant number of challenges for PBjarCTF 21. Primarily wrote binary exploitation, including a beginner tutorial series w/ explanations.",
+  "iframe": "https://pbjar.github.io/ctfpbjar.github.io/",
+  "resources": {
+    "Link": "https://pbjar.github.io/ctfpbjar.github.io/",
+    "CTFTime": "https://ctftime.org/ctf/665/",
+    "Github": "https://github.com/pbjar/Challenges"
+  }
+}

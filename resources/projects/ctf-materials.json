@@ -2,8 +2,8 @@
   "title": "Cybersecurity CTF Materials",
   "date": "2024-01-20",
   "description": "Some of the CTF materials I saved, including problem solutions w/ notes and list of tools/resources.",
-  "image": "/static/images/cp-code-screenshot.png",
+  "image": "/static/images/ctf-materials-screenshot.png",
   "resources": {
-    "Github": "https://github.com/superj6/CPcode"
+    "Github": "https://github.com/superj6/ctf"
   }
 }
