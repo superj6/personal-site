@@ -1,22 +1,20 @@
 # Jason Gonzalez
 ---
 
-911 Sonora Drive Allen, Texas || +14693638197 || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
-##  Experience
+adr street city, state|| phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
+
+## Education
 ---
 
-**Cybersecurity CTF Problemwriting** (2021-2023)
-
-Primarily writing binary exploitation challenges in C with python test exploits. For PBjarCTF (<https://github.com/pbjar>) and LITCTF (<https://github.com/LEXMACS>) I taught proper contest organization and problem setup to teams involved, helped setup Google Cloud infrastructure. Also wrote for KQCTF and idekCTF. 
-
-**USACO Tutoring** (2022-2023)
-
-Independently tutored many students through online meetings to reach the highest levels of the USACO programming contest. 
+- **2022-Present:** Massachusettes Institute of Technology
+  - Relevant Courses: 6.5660 Computer Security, 6.5840 Distributed Systems, 18.701 Algebra I, 18.901 Introduction to Toplogy
+- **2020-2022:** Gonzalez Homeschool
+  - Relevant Courses: (2.087 Equivalent) Engineering Math: Differential Equations and Linear Algebra, (6.1220 Equivalent) Design and Analysis of Algorithms, (18.02 Equivalent) Multivariable Calculus 
 
 ## Projects
 ---
 
-**Geoguess IRL Mobile App** (<https://github.com/superj6/geoguess-irl>)
+**Geoguess IRL Mobile App** (<https://github.com/superj6/geoguess_irl>)
 
 Inspired by the game geoguessr, a flutter mobile app where within a radius of your gps location are given a random image provided by google maps api and have to attempt to physically walk as close to the location as possible. Use a nodejs server to store account information and look up other's stats.
 
@@ -32,14 +30,25 @@ Pytorch RNN model with attention for translating English to Spanish. Experimente
 
 A chrome extension that generates popup quizzes at random intervals based on flashcards sourced by user-provided quizlet links. To scrape links in browser and work around CORS, I opened link in iframe and inserted content-script that scrapes flashcards and sends to background worker. Published on Chrome Webstore.
 
+##  Experience
+---
+
+**Cybersecurity CTF Problemwriting** (2021-2023)
+
+Primarily wrote binary exploitation challenges in C with python test exploits. For PBjarCTF (<https://github.com/pbjar>) and LITCTF (<https://github.com/LEXMACS>) I taught proper contest organization and problem setup to teams involved, helped setup Google Cloud infrastructure. Also wrote for KQCTF and idekCTF. 
+
+**USACO Tutoring** (2022-2023)
+
+Independently tutored many students through online meetings to reach the highest levels of the USACO programming contest. 
+
 ## Awards
 ---
 
-- **USACO Finalist 2021** - Top 26 rank in national HS algorithm contest, invited to training camp.
-- **Codeforces Max Rating 2319** - Top 1% elo ration in international algorithm contests, account "SuperJ6".
-- **Google Codejam Round 3 Qualifier 2022** - Top 1000 out of ~30000 in algorithm contest.
-- **PicoCTF 2022 13th Place** - Cybersecurity CTF, ~7500 teams, competed on team "PeanutButterJar". 
-- **CSAW CTF Finals 2022 3rd Place** - Cybersecurity CTF, ~850 teams in qualifier, competed on team "idek".
+- **USACO Finalist 2021** - Top 26 rank of ~5000 in national HS algorithm contests, invited to training camp.
+- **Codeforces Max Rating 2319** - Top 1% elo rating in international algorithm contests, account "SuperJ6".
+- **Google Codejam Round 3 Qualifier 2022** - Top 1000 out of ~30000 in international algorithm contest.
+- **PicoCTF 2022 13th Place** - International cybersecurity CTF, ~7500 teams, competed on team "PeanutButterJar". 
+- **CSAW CTF Finals 2022 3rd Place** - International cybersecurity CTF, ~850 teams in qualifier, competed on team "idek".
 
 ## Skills
 ---
@@ -49,11 +58,3 @@ A chrome extension that generates popup quizzes at random intervals based on fla
 - **Web Development** - HTML/CSS, EJS, Nodejs, Nginx, Docker
 - **Machine Learning** - Pytorch
 - **3d Modelling** - Solidworks
-
-## Education
----
-
-- **2022-present:** Massachusettes Institute of Technology
-  - Relevant Courses: 6.5660 Computer Security, 6.5840 Distributed Systems, 18.701 Algebra I, 18.901 Introduction to Toplogy
-- **2020-2022:** Gonzalez Homeschool
-  - Relevant Courses: (2.087 Equivalent) Engineering Math: Differential Equations and Linear Algebra, (6.1220 Equivalent) Design and Analysis of Algorithms, (18.02 Equivalent) Multivariable Calculus 
