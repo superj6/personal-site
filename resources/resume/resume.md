@@ -1,7 +1,11 @@
+<div align="center">
+
 # Jason Gonzalez
 ---
 
 adr street city, state|| phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
+
+</div>
 
 ## Education
 ---
