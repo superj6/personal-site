@@ -3,7 +3,7 @@
 # Jason Gonzalez
 ---
 
-adr street city, state || phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
+city, state || phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github.com/superj6>   
 
 </div>
 
@@ -18,9 +18,9 @@ adr street city, state || phone || <jgon@mit.edu>  || <https://jgon.net> || <htt
 ##  Experience
 ---
 
-**Cybersecurity CTF Problemwriting** (2021-2023)
+**Cybersecurity CTF Problemwriting** (2021-2024)
 
-Primarily wrote binary exploitation challenges in C with python test exploits. For PBjarCTF (<https://github.com/pbjar>) and LITCTF (<https://github.com/LEXMACS>) I taught proper contest organization and problem setup to teams involved, helped setup Google Cloud infrastructure. Also wrote for KQCTF and idekCTF. All these CTFs had over 500 teams and over $500 in prize money from sponsors. 
+Primarily wrote binary exploitation challenges in C with Python pwntools test exploits. For PBjarCTF (<https://github.com/pbjar>) and LITCTF (<https://github.com/LEXMACS>) I taught proper contest organization and problem setup to teams involved, helped setup Google Cloud infrastructure. Also wrote for KQCTF and idekCTF. All these CTFs had over 500 teams and over $500 in prize money from sponsors. 
 
 **USACO Tutoring** (2022-2023)
 
@@ -35,7 +35,7 @@ Inspired by the game Geoguessr, a flutter mobile app where within a radius of yo
 
 **Autogen Geodash** (<https://github.com/superj6/autogen-geodash>)
 
-A C++ OpenGL simplified version of the 2d game Geometry Dash that autogenerates level maps. During gameplay all possible upcoming player positions are simulated to ensure the level is always beatable.
+A C++ OpenGL simplified version of the 2d game Geometry Dash that autogenerates level maps. During gameplay all possible upcoming player positions are simulated efficiently by storing a list of reachable frontier positions to ensure the level is always beatable.
 
 **DNQ Attention** (<https://github.com/superj6/dnq-attention>)
 
@@ -49,7 +49,7 @@ A chrome extension that generates popup quizzes at random intervals based on fla
 ---
 
 - **USACO Finalist 2021** - Top 26 rank of ~5000 in national HS algorithm contests, invited to training camp.
-- **Codeforces Max Rating 2319** - Top 1% elo rating in international algorithm contests, account "SuperJ6".
+- **Codeforces Max Rating 2319** - Top 0.5% elo rating in international algorithm contests, account "SuperJ6".
 - **Google Codejam Round 3 Qualifier 2022** - Top 1000 out of ~30000 in international algorithm contest.
 - **PicoCTF 2022 13th Place** - International cybersecurity CTF, ~7500 teams, competed on team "PeanutButterJar". 
 - **CSAW CTF Finals 2022 3rd Place** - International cybersecurity CTF, ~850 teams in qualifier, competed on team "idek".
