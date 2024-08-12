@@ -37,7 +37,7 @@ Independently tutored many students through online meetings to reach the highest
 
 **Geoguess IRL Mobile App** (<https://github.com/superj6/geoguess_irl>)
 
-Inspired by the game Geoguessr, a Flutter mobile app where within a radius of your gps location are given a random image provided by Google Maps API and have to attempt to physically walk as close to the location as possible. Use a Nodejs server to store account information and look up other's stats.
+Inspired by the game Geoguessr, a Flutter mobile app where within a radius of your gps location you are given a random image provided by Google Maps API and have to attempt to physically walk as close to the location as possible. Use a Nodejs server to store account information and look up other's stats.
 
 **Autogen Geodash** (<https://github.com/superj6/autogen-geodash>)
 
