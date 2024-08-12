@@ -10,12 +10,16 @@ city, state || phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github
 ## Education
 ---
 
-**2022-Present:** Massachusetts Institute of Technology  
+**Massachusetts Institute of Technology** (2022-Present)  
 - Major: 18 Mathematics and 6-3 Computer Science  
 - Relevant Courses: 6.5660 Computer Security, 6.5840 Distributed Systems, 18.701 Algebra I, 18.901 Introduction to Toplogy  
-   
-**2020-2022:** Gonzalez Homeschool
+
+<div class="education-hidden">   
+
+**Gonzalez Homeschool** (2020-2022)
 - Relevant Courses: (2.087 Equivalent) Engineering Math: Differential Equations and Linear Algebra, (6.1220 Equivalent) Design and Analysis of Algorithms, (18.02 Equivalent) Multivariable Calculus 
+
+</div>
 
 ##  Experience
 ---
@@ -33,7 +37,7 @@ Independently tutored many students through online meetings to reach the highest
 
 **Geoguess IRL Mobile App** (<https://github.com/superj6/geoguess_irl>)
 
-Inspired by the game Geoguessr, a flutter mobile app where within a radius of your gps location are given a random image provided by google maps api and have to attempt to physically walk as close to the location as possible. Use a Nodejs server to store account information and look up other's stats.
+Inspired by the game Geoguessr, a Flutter mobile app where within a radius of your gps location are given a random image provided by Google Maps API and have to attempt to physically walk as close to the location as possible. Use a Nodejs server to store account information and look up other's stats.
 
 **Autogen Geodash** (<https://github.com/superj6/autogen-geodash>)
 
