@@ -12,7 +12,7 @@ city, state || phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github
 
 **Massachusetts Institute of Technology** (2022-Present)  
 - Major: 18 Mathematics and 6-3 Computer Science  
-- Relevant Courses: 6.5660 Computer Security, 6.5840 Distributed Systems, 18.701 Algebra I, 18.901 Introduction to Toplogy  
+- Relevant Courses: 6.5660 Computer Security, 6.5840 Distributed Systems, 18.701 Algebra I, 18.901 Introduction to Topology  
 
 <div class="education-hidden">   
 
