@@ -43,7 +43,7 @@ Inspired by the game Geoguessr, a Flutter mobile app where within a radius of yo
 
 A C++ OpenGL simplified version of the 2d game Geometry Dash that autogenerates level maps. During gameplay all possible upcoming player positions are simulated efficiently by storing a list of reachable frontier positions to ensure the level is always beatable.
 
-**DNQ Attention RNN Model** ([Github](https://github.com/superj6/dnq-attention))
+**DNQ Attention RNN Translator** ([Github](https://github.com/superj6/dnq-attention))
 
 Pytorch RNN model with attention for translating English to Spanish. Experimented with custom attention mechanism that queries relevant info by continually merging halves rather than comparing all terms at once.
 
