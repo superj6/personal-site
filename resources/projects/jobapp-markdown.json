@@ -1,0 +1,9 @@
+{
+  "title": "Jobapp Markdown Resume & Letters",
+  "date": "2024-08-04",
+  "description": "A bundle of templates and bash scripts to easily create a resume and cover letters in markdown. Allows me to use same resume source on this website and for pdf.",
+  "image": "/static/images/jobapp-markdown-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/jobapp-markdown-resume-letters"
+  }
+}
