@@ -28,7 +28,7 @@ city, state || phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github
 
 Primarily wrote binary exploitation challenges in C with Python pwntools test exploits. For PBjarCTF ([Github](https://github.com/pbjar)) and LITCTF ([Github](https://github.com/LEXMACS)) I taught proper contest organization and problem setup to teams involved and helped setup Google Cloud infrastructure. I also wrote for KQCTF ([Github](https://github.com/ZeroDayTea/kqctf)) and idekCTF ([Github](https://github.com/idekctf)). All these CTFs had over 500 teams and over $500 in prize money from sponsors. 
 
-**USACO Tutoring** (2021-2024)
+**USACO Tutoring** (2021-2023)
 
 Independently tutored many students through online meetings to reach the highest levels of the USACO programming contest. Many students achieved highest division of Platinum, one student qualified for the Finalist Camp. 
 
