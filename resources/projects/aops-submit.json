@@ -1,0 +1,9 @@
+{
+  "title": "AOPS Submit Chrome Extension",
+  "date": "2024-09-24",
+  "description": "A chrome extension that allows you to submit to problems and track progress on aops.com website.",
+  "image": "/static/images/aops-submit-screenshot.png",
+  "resources": {
+    "Github": "https://github.com/superj6/aops-submit"
+  }
+}
