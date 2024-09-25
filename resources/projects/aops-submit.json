@@ -4,6 +4,7 @@
   "description": "A chrome extension that allows you to submit to problems and track progress on aops.com website.",
   "image": "/static/images/aops-submit-screenshot.png",
   "resources": {
+    "Install": "https://chromewebstore.google.com/detail/aops-submit/bnklblfogiofpgbhgikidgmbhlhilnnn",
     "Github": "https://github.com/superj6/aops-submit"
   }
 }
