@@ -10,7 +10,7 @@ city, state || phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github
 ## Education
 ---
 
-**Massachusetts Institute of Technology** (2022-Present)  
+**Massachusetts Institute of Technology** (2022-2023)  
 - Major: 18 Mathematics and 6-3 Computer Science  
 - Relevant Courses: 6.5660 Computer Security, 6.5840 Distributed Systems, 18.701 Algebra I, 18.901 Introduction to Topology  
 
@@ -24,13 +24,24 @@ city, state || phone || <jgon@mit.edu>  || <https://jgon.net> || <https://github
 ##  Experience
 ---
 
+**Jane Street - Software Engineer Intern** (May 2025-Aug 2025)
+
+Systems
+
+**Windsurf - Software Engineer Intern** (Oct 2024-May 2025)
+
+Created and trained [Tab to Jump](https://docs.windsurf.com/tab/overview#tab-to-jump). Prototyped agentic suggestions.
+
+**USACO Tutoring** (Sep 2021-Feb 2024)
+
+Independently tutored many students through online meetings to reach the highest levels of the USACO programming contest. Many students achieved highest division of Platinum, one student qualified for the Finalist Camp. 
+
+## Volunteer
+---
+
 **Cybersecurity CTF Problemwriting** (2021-2024)
 
 Primarily wrote binary exploitation challenges in C with Python pwntools test exploits. For PBjarCTF ([Github](https://github.com/pbjar)) and LITCTF ([Github](https://github.com/LEXMACS)) I taught proper contest organization and problem setup to teams involved and helped setup Google Cloud infrastructure. I also wrote for KQCTF ([Github](https://github.com/ZeroDayTea/kqctf)) and idekCTF ([Github](https://github.com/idekctf)). All these CTFs had over 500 teams and over $500 in prize money from sponsors. 
-
-**USACO Tutoring** (2021-2023)
-
-Independently tutored many students through online meetings to reach the highest levels of the USACO programming contest. Many students achieved highest division of Platinum, one student qualified for the Finalist Camp. 
 
 ## Projects
 ---
