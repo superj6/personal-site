@@ -11,6 +11,9 @@
     if(typeof createSymbolicExecutionDiagram === 'function'){
       DIAGRAM_LIBRARY.push(createSymbolicExecutionDiagram());
     }
+    if(typeof createDelaunayBeachlineDiagram === 'function'){
+      DIAGRAM_LIBRARY.push(createDelaunayBeachlineDiagram());
+    }
     if(typeof createMathEquationsDiagram === 'function'){
       DIAGRAM_LIBRARY.push(createMathEquationsDiagram());
     }
