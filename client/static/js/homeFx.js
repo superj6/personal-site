@@ -14,6 +14,10 @@
     if(typeof createMathEquationsDiagram === 'function'){
       DIAGRAM_LIBRARY.push(createMathEquationsDiagram());
     }
+    if(typeof createAiFaceDiagram === 'function'){
+      // Store this globally or on a static property so we can access it for the secret key
+      window.SECRET_AI_FACE_DIAGRAM = createAiFaceDiagram();
+    }
   }
 
   class HomeFx{
@@ -27,7 +31,7 @@
       this.neonRgb = hexToRgb(this.neonColor);
       this.starConfig = {
         backgroundCount: 32,
-        diagramPoolSize: 140,
+        diagramPoolSize: 1200,
         speedFactor: 0.006,
         flashChance: 0.0008,
         flashFade: 0.0008
@@ -53,6 +57,8 @@
       this.handleKeydown = this.handleKeydown.bind(this);
       window.addEventListener('resize', this.handleResize);
       window.addEventListener('keydown', this.handleKeydown);
+      console.log('HomeFx: Event listeners attached');
+      console.log('HomeFx: createAiFaceDiagram available?', typeof window.createAiFaceDiagram);
       this.resizeCanvas();
       this.seedStars();
     }
@@ -66,7 +72,37 @@
       if(e.key === 'j' || e.key === 'J'){
         e.preventDefault();
         this.nextDiagramAt = performance.now() - 1;
+      } else if (e.key === 'g' || e.key === 'G'){
+        console.log('G key pressed!');
+        e.preventDefault();
+        console.log('SECRET_AI_FACE_DIAGRAM exists?', !!window.SECRET_AI_FACE_DIAGRAM);
+        console.log('createAiFaceDiagram exists?', typeof window.createAiFaceDiagram);
+        if(window.SECRET_AI_FACE_DIAGRAM){
+           console.log('Using cached diagram');
+           this.forceSecretDiagram(window.SECRET_AI_FACE_DIAGRAM);
+        } else if(typeof window.createAiFaceDiagram === 'function'){
+           console.log('Creating diagram on demand');
+           window.SECRET_AI_FACE_DIAGRAM = window.createAiFaceDiagram();
+           console.log('Created diagram:', window.SECRET_AI_FACE_DIAGRAM);
+           this.forceSecretDiagram(window.SECRET_AI_FACE_DIAGRAM);
+        } else {
+           console.log('No Ai Face diagram available!');
+        }
       }
+    }
+    
+    forceSecretDiagram(def){
+      console.log('forceSecretDiagram called with:', def);
+      if(this.activeDiagram){
+        console.log('Releasing active diagram');
+        this.stars.releaseDiagramStars(this.activeDiagram.stars);
+        this.activeDiagram = null;
+      }
+
+      this.forcedNextDiagram = def;
+      this.nextDiagramAt = performance.now();
+      console.log('Starting secret diagram immediately');
+      this.startDiagram(performance.now());
     }
 
     resizeCanvas(){
@@ -153,9 +189,17 @@
     }
 
     startDiagram(time){
-      const def = DIAGRAM_LIBRARY[this.diagramIndex % DIAGRAM_LIBRARY.length];
+      let def;
+      if(this.forcedNextDiagram){
+        def = this.forcedNextDiagram;
+        this.forcedNextDiagram = null;
+      } else {
+        def = DIAGRAM_LIBRARY[this.diagramIndex % DIAGRAM_LIBRARY.length];
+      }
+      
       const assignments = this.stars.allocateForDiagram(def.nodes, this.toCanvasCoords.bind(this));
       if(!assignments){
+        console.warn('Failed to allocate stars for diagram', def.id, 'nodes:', def.nodes.length, 'pool size:', this.starConfig.diagramPoolSize);
         this.nextDiagramAt = time + 6000;
         return;
       }
@@ -167,12 +211,17 @@
         stage: 'assembling',
         assembleDuration: this.diagramTimings.assemble,
         connectDuration: this.diagramTimings.connect,
-        holdDuration: this.diagramTimings.hold,
+        holdDuration: def.duration || this.diagramTimings.hold, // Support custom duration
         fadeDuration: this.diagramTimings.fade,
         stageStartedAt: time
       };
-      this.diagramIndex += 1;
-      this.diagramIterations += 1;
+      
+      // Only increment index if it wasn't a secret diagram (check by id)
+      if(def.id !== 'ai-face'){
+         this.diagramIndex += 1;
+         this.diagramIterations += 1;
+      }
+      
       const delay = this.diagramIterations === 0 ? 
         this.diagramTimings.firstLoopDelay : 
         this.diagramTimings.subsequentLoopDelay;
