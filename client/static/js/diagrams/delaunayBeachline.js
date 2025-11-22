@@ -101,13 +101,13 @@ function createDelaunayBeachlineDiagram(){
       // --- 2. Draw animated sweep line (VERTICAL line moving left-to-right) ---
       const sweepXPx = sweepX * util.canvasWidth;
       const gradient = ctx.createLinearGradient(sweepXPx - 20, 0, sweepXPx + 20, 0);
-      gradient.addColorStop(0, 'rgba(255,255,255,0)');
-      gradient.addColorStop(0.5, 'rgba(255,255,255,0.6)');
-      gradient.addColorStop(1, 'rgba(255,255,255,0)');
+      gradient.addColorStop(0, util.rgbaString(util.neonRgb, 0));
+      gradient.addColorStop(0.5, util.rgbaString(util.neonRgb, 0.7));
+      gradient.addColorStop(1, util.rgbaString(util.neonRgb, 0));
       ctx.strokeStyle = gradient;
       ctx.lineWidth = 2.5;
       ctx.shadowBlur = 18;
-      ctx.shadowColor = 'rgba(255,255,255,0.6)';
+      ctx.shadowColor = util.neonColor;
       ctx.beginPath();
       ctx.moveTo(sweepXPx, 0);
       ctx.lineTo(sweepXPx, util.canvasHeight);
@@ -168,9 +168,9 @@ function createDelaunayBeachlineDiagram(){
         const pulse = Math.sin(time * 0.003 + index) * 0.2 + 0.8;
         
         ctx.shadowBlur = size * 3;
-        ctx.shadowColor = isActive ? '#ffffff' : util.neonColor;
+        ctx.shadowColor = util.neonColor;
         ctx.fillStyle = isActive 
-          ? `rgba(255,255,255,${baseAlpha * pulse})`
+          ? util.rgbaString(util.neonRgb, (baseAlpha + 0.2) * pulse)
           : util.rgbaString(util.neonRgb, baseAlpha);
         
         ctx.beginPath();
