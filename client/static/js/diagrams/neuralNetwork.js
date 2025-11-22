@@ -1,5 +1,5 @@
 function createNeuralNetworkDiagram(){
-  const layerCounts = [4, 5, 5, 4, 3];
+  const layerCounts = [3, 5, 5, 4, 2];
   const nodes = [];
   const layers = [];
   const marginX = 0.04;
@@ -7,15 +7,24 @@ function createNeuralNetworkDiagram(){
   const width = 0.92;
   const height = 0.88;
   let runningIndex = 0;
+  const maxLayerCount = Math.max(...layerCounts);
+  const baseSpacing = maxLayerCount > 1 ? height / (maxLayerCount - 1) : height;
 
   layerCounts.forEach((count, layerIndex) => {
     const layerNodes = [];
     const x = marginX + (width / (layerCounts.length - 1)) * layerIndex;
-    for(let i = 0; i < count; i++){
-      const y = marginY + (height / (count - 1 || 1)) * i;
+    let yPositions;
+    if(count === 1){
+      yPositions = [marginY + height / 2];
+    } else {
+      const span = baseSpacing * (count - 1);
+      const topOffset = (height - span) / 2;
+      yPositions = Array.from({length: count}, (_, i) => marginY + topOffset + baseSpacing * i);
+    }
+    yPositions.forEach((y) => {
       nodes.push({x, y});
       layerNodes.push(runningIndex++);
-    }
+    });
     layers.push(layerNodes);
   });
 
