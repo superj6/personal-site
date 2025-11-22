@@ -8,6 +8,9 @@
     if(typeof createNeuralNetworkDiagram === 'function'){
       DIAGRAM_LIBRARY.push(createNeuralNetworkDiagram());
     }
+    if(typeof createSymbolicExecutionDiagram === 'function'){
+      DIAGRAM_LIBRARY.push(createSymbolicExecutionDiagram());
+    }
   }
 
   class HomeFx{
