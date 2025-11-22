@@ -11,6 +11,9 @@
     if(typeof createSymbolicExecutionDiagram === 'function'){
       DIAGRAM_LIBRARY.push(createSymbolicExecutionDiagram());
     }
+    if(typeof createMathEquationsDiagram === 'function'){
+      DIAGRAM_LIBRARY.push(createMathEquationsDiagram());
+    }
   }
 
   class HomeFx{
@@ -24,7 +27,7 @@
       this.neonRgb = hexToRgb(this.neonColor);
       this.starConfig = {
         backgroundCount: 32,
-        diagramPoolSize: 65,
+        diagramPoolSize: 140,
         speedFactor: 0.006,
         flashChance: 0.0008,
         flashFade: 0.0008
@@ -47,7 +50,9 @@
       this.nameAnimationDelay = 4600;
       this.ticker = this.ticker.bind(this);
       this.handleResize = this.resizeCanvas.bind(this);
+      this.handleKeydown = this.handleKeydown.bind(this);
       window.addEventListener('resize', this.handleResize);
+      window.addEventListener('keydown', this.handleKeydown);
       this.resizeCanvas();
       this.seedStars();
     }
@@ -55,6 +60,13 @@
     seedStars(){
       this.stars.init(this.width, this.height, this.neonColor, this.neonRgb);
       this.stars.seed();
+    }
+
+    handleKeydown(e){
+      if(e.key === 'j' || e.key === 'J'){
+        e.preventDefault();
+        this.nextDiagramAt = performance.now() - 1;
+      }
     }
 
     resizeCanvas(){
