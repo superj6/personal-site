@@ -34,16 +34,14 @@
         connect: 900,
         hold: 3200,
         fade: 1200,
-        minDelay: 22000,
-        maxDelay: 38000,
-        delayIncrement: 12000,
-        maxTotalDelay: 140000
+        firstLoopDelay: 30000,
+        subsequentLoopDelay: 60000
       };
       this.stars = createStarsEngine(this.starConfig);
       this.activeDiagram = null;
       this.diagramIndex = 0;
       this.diagramIterations = 0;
-      this.nextDiagramAt = performance.now() + randomRange(this.diagramTimings.minDelay, this.diagramTimings.maxDelay);
+      this.nextDiagramAt = performance.now() + this.diagramTimings.firstLoopDelay;
       this.lastTime = null;
       this.startTime = null;
       this.nameAnimationDelay = 4600;
@@ -163,12 +161,10 @@
       };
       this.diagramIndex += 1;
       this.diagramIterations += 1;
-      const extraDelay = Math.min(
-        this.diagramIterations * this.diagramTimings.delayIncrement,
-        this.diagramTimings.maxTotalDelay
-      );
-      const baseDelay = randomRange(this.diagramTimings.minDelay, this.diagramTimings.maxDelay);
-      this.nextDiagramAt = time + baseDelay + extraDelay;
+      const delay = this.diagramIterations === 0 ? 
+        this.diagramTimings.firstLoopDelay : 
+        this.diagramTimings.subsequentLoopDelay;
+      this.nextDiagramAt = time + delay;
     }
 
     advanceDiagramState(time){
