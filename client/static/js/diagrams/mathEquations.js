@@ -6,7 +6,7 @@ function createMathEquationsDiagram(){
 
   // --- Symbol 1: ∞ (Infinity) ---
   // Reduced steps from 40 to 24
-  const posInf = {x: 0.78, y: 0.22, s: 0.10};
+  const posInf = {x: 0.86, y: 0.22, s: 0.10};
   const infinityNodes = [];
   const infSteps = 24;
   for(let i=0; i<infSteps; i++){
@@ -24,7 +24,7 @@ function createMathEquationsDiagram(){
 
   // --- Symbol 2: ∇ (Nabla) ---
   // Reduced subdivision from 6 to 4 (total 12 pts)
-  const posNabla = {x: 0.5, y: 0.82, s: 0.07};
+  const posNabla = {x: 0.58, y: 0.82, s: 0.07};
   const nablaBase = [
     {x: posNabla.x - posNabla.s*0.866, y: posNabla.y - posNabla.s*0.5},
     {x: posNabla.x + posNabla.s*0.866, y: posNabla.y - posNabla.s*0.5},
@@ -52,7 +52,7 @@ function createMathEquationsDiagram(){
 
   // --- Symbol 3: ∫ (Integral) ---
   // Reduced steps from 24 to 16
-  const posInt = {x: 0.15, y: 0.5, sX: 0.06, sY: 0.12}; 
+  const posInt = {x: 0.10, y: 0.5, sX: 0.06, sY: 0.12}; 
   const integralNodes = [];
   const intSteps = 16;
   for(let i=0; i<=intSteps; i++){
@@ -76,7 +76,7 @@ function createMathEquationsDiagram(){
 
   // --- Symbol 4: ∂ (Partial Derivative) ---
   // Parametric approx
-  const posPart = {x: 0.22, y: 0.22, s: 0.08};
+  const posPart = {x: 0.26, y: 0.22, s: 0.08};
   const partialNodes = [];
   const partSteps = 18;
   for(let i=0; i<=partSteps; i++){
@@ -107,7 +107,7 @@ function createMathEquationsDiagram(){
 
 
   // --- Symbol 5: ∑ (Sigma) ---
-  const posSig = {x: 0.82, y: 0.65, s: 0.08};
+  const posSig = {x: 0.92, y: 0.65, s: 0.08};
   const sigmaKeys = [
     {x: 0.6, y: -0.8}, {x: -0.6, y: -0.8}, // Top bar
     {x: 0.2, y: 0.0},                      // Middle point
@@ -121,7 +121,7 @@ function createMathEquationsDiagram(){
 
 
   // --- Symbol 6: ⊕ (Direct Sum) ---
-  const posOplus = {x: 0.5, y: 0.45, s: 0.06};
+  const posOplus = {x: 0.48, y: 0.45, s: 0.06};
   const oplusNodes = [];
   const circleSteps = 16;
   // Circle
@@ -150,6 +150,63 @@ function createMathEquationsDiagram(){
   ];
   shapes.push({pts: subdivide(crossH, 3), closed: false});
   shapes.push({pts: subdivide(crossV, 3), closed: false});
+
+
+  // --- 3D Shape 1: Wireframe Cube ---
+  const cubeCenter = {x: 0.34, y: 0.62};
+  const cubeHalf = 0.06;
+  const cubeDepth = 0.035;
+
+  const frontTL = {x: cubeCenter.x - cubeHalf, y: cubeCenter.y - cubeHalf};
+  const frontTR = {x: cubeCenter.x + cubeHalf, y: cubeCenter.y - cubeHalf};
+  const frontBR = {x: cubeCenter.x + cubeHalf, y: cubeCenter.y + cubeHalf};
+  const frontBL = {x: cubeCenter.x - cubeHalf, y: cubeCenter.y + cubeHalf};
+
+  const backTL = {x: frontTL.x + cubeDepth, y: frontTL.y - cubeDepth};
+  const backTR = {x: frontTR.x + cubeDepth, y: frontTR.y - cubeDepth};
+  const backBR = {x: frontBR.x + cubeDepth, y: frontBR.y - cubeDepth};
+  const backBL = {x: frontBL.x + cubeDepth, y: frontBL.y - cubeDepth};
+
+  const addEdge = (a, b) => shapes.push({pts: subdivide([a, b], 3), closed: false});
+
+  // Front square
+  addEdge(frontTL, frontTR);
+  addEdge(frontTR, frontBR);
+  addEdge(frontBR, frontBL);
+  addEdge(frontBL, frontTL);
+  // Back square
+  addEdge(backTL, backTR);
+  addEdge(backTR, backBR);
+  addEdge(backBR, backBL);
+  addEdge(backBL, backTL);
+  // Connecting edges
+  addEdge(frontTL, backTL);
+  addEdge(frontTR, backTR);
+  addEdge(frontBR, backBR);
+  addEdge(frontBL, backBL);
+
+  // --- 3D Shape 2: Pyramid ---
+  const pyramidCenter = {x: 0.68, y: 0.36};
+  const pyramidWidth = 0.08;
+  const pyramidDepth = 0.045;
+  const baseHeight = 0.035;
+  const apex = {x: pyramidCenter.x, y: pyramidCenter.y - 0.10};
+
+  const baseA = {x: pyramidCenter.x - pyramidWidth, y: pyramidCenter.y + baseHeight};
+  const baseB = {x: pyramidCenter.x + pyramidWidth, y: pyramidCenter.y + baseHeight};
+  const baseC = {x: pyramidCenter.x + pyramidWidth + pyramidDepth, y: pyramidCenter.y + baseHeight - pyramidDepth};
+  const baseD = {x: pyramidCenter.x - pyramidWidth + pyramidDepth, y: pyramidCenter.y + baseHeight - pyramidDepth};
+
+  // Base perimeter
+  addEdge(baseA, baseB);
+  addEdge(baseB, baseC);
+  addEdge(baseC, baseD);
+  addEdge(baseD, baseA);
+  // Sides to apex
+  addEdge(baseA, apex);
+  addEdge(baseB, apex);
+  addEdge(baseC, apex);
+  addEdge(baseD, apex);
 
 
   // --- Flatten nodes and connections ---
