@@ -10,7 +10,7 @@
     <dt><%= blog.meta.date.toLocaleDateString() %></dt>
     <dt><%= blog.meta.topic %></dt>
   </dl>
-  <div>
+  <div class="blog-article--body">
     <%- md.render(isPreview? blog.content.split('[cut]::')[0] : blog.content) %>
   </div>
   <% if(isPreview){ %>
