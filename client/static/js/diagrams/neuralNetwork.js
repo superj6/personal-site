@@ -90,7 +90,7 @@ function createNeuralNetworkDiagram(){
         activeEdgeIds = new Set(activeEdges.map((edge) => edge.index));
       }
 
-      if(lineAlpha > 0){
+      if(stage.stage !== 'assembling' && lineAlpha > 0){
         edges.forEach((edge) => {
           const a = points[edge.source];
           const b = points[edge.target];

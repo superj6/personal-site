@@ -56,8 +56,6 @@ function createChipCircuitDiagram(){
       ctx.shadowBlur = 14;
       ctx.shadowColor = util.neonColor;
       
-      ctx.lineWidth = 1.0 + 0.3 * stage.lightBoost;
-      ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.25 + 0.4 * stage.lightBoost);
       const getWireSegments = (a, b) => {
         const ax = points[a].x, ay = points[a].y;
         const bx = points[b].x, by = points[b].y;
@@ -68,60 +66,62 @@ function createChipCircuitDiagram(){
         return [{x:ax,y:ay}, {x:midX,y:ay}, {x:midX,y:by}, {x:bx,y:by}];
       };
 
-      ctx.lineWidth = 1.0 + 0.4 * stage.lightBoost;
-      ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.25 + 0.45 * stage.lightBoost);
-      wires.forEach(([a, b]) => {
-        const segs = getWireSegments(a, b);
-        ctx.beginPath();
-        ctx.moveTo(segs[0].x, segs[0].y);
-        for(let i = 1; i < segs.length; i++){
-          ctx.lineTo(segs[i].x, segs[i].y);
-        }
-        ctx.stroke();
-      });
+      if(stage.stage !== 'assembling'){
+        ctx.lineWidth = 1.0 + 0.4 * stage.lightBoost;
+        ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.25 + 0.45 * stage.lightBoost);
+        wires.forEach(([a, b]) => {
+          const segs = getWireSegments(a, b);
+          ctx.beginPath();
+          ctx.moveTo(segs[0].x, segs[0].y);
+          for(let i = 1; i < segs.length; i++){
+            ctx.lineTo(segs[i].x, segs[i].y);
+          }
+          ctx.stroke();
+        });
 
-      ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.35 + 0.5 * stage.lightBoost);
-      ctx.lineWidth = 1.2;
-      gates.forEach((gate) => {
-        const gx = gate.center.x * util.canvasWidth;
-        const gy = gate.center.y * util.canvasHeight;
-        const s = gate.size;
+        ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.35 + 0.5 * stage.lightBoost);
+        ctx.lineWidth = 1.2;
+        gates.forEach((gate) => {
+          const gx = gate.center.x * util.canvasWidth;
+          const gy = gate.center.y * util.canvasHeight;
+          const s = gate.size;
+          ctx.beginPath();
+          ctx.rect(gx - s, gy - s, s*2, s*2);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(gx + s + 3.5, gy, 3.5, 0, Math.PI * 2);
+          ctx.stroke();
+        });
+
+        const ledIdx = 16;
+        const ledPt = points[ledIdx];
+        ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.4 + 0.6 * stage.lightBoost);
+        ctx.lineWidth = 1.0;
+        const ledSize = 8;
         ctx.beginPath();
-        ctx.rect(gx - s, gy - s, s*2, s*2);
+        ctx.moveTo(ledPt.x - ledSize, ledPt.y - ledSize);
+        ctx.lineTo(ledPt.x + ledSize, ledPt.y);
+        ctx.lineTo(ledPt.x - ledSize, ledPt.y + ledSize);
+        ctx.closePath();
         ctx.stroke();
         ctx.beginPath();
-        ctx.arc(gx + s + 3.5, gy, 3.5, 0, Math.PI * 2);
+        ctx.moveTo(ledPt.x + ledSize, ledPt.y - ledSize);
+        ctx.lineTo(ledPt.x + ledSize, ledPt.y + ledSize);
         ctx.stroke();
-      });
 
-      const ledIdx = 16;
-      const ledPt = points[ledIdx];
-      ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.4 + 0.6 * stage.lightBoost);
-      ctx.lineWidth = 1.0;
-      const ledSize = 8;
-      ctx.beginPath();
-      ctx.moveTo(ledPt.x - ledSize, ledPt.y - ledSize);
-      ctx.lineTo(ledPt.x + ledSize, ledPt.y);
-      ctx.lineTo(ledPt.x - ledSize, ledPt.y + ledSize);
-      ctx.closePath();
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(ledPt.x + ledSize, ledPt.y - ledSize);
-      ctx.lineTo(ledPt.x + ledSize, ledPt.y + ledSize);
-      ctx.stroke();
-
-      const resIdx = 15;
-      const resPt = points[resIdx];
-      ctx.lineWidth = 1.0;
-      const w = 8;
-      ctx.beginPath();
-      ctx.moveTo(resPt.x - w, resPt.y);
-      ctx.lineTo(resPt.x - w*0.6, resPt.y - 4);
-      ctx.lineTo(resPt.x - w*0.2, resPt.y + 4);
-      ctx.lineTo(resPt.x + w*0.2, resPt.y - 4);
-      ctx.lineTo(resPt.x + w*0.6, resPt.y + 4);
-      ctx.lineTo(resPt.x + w, resPt.y);
-      ctx.stroke();
+        const resIdx = 15;
+        const resPt = points[resIdx];
+        ctx.lineWidth = 1.0;
+        const w = 8;
+        ctx.beginPath();
+        ctx.moveTo(resPt.x - w, resPt.y);
+        ctx.lineTo(resPt.x - w*0.6, resPt.y - 4);
+        ctx.lineTo(resPt.x - w*0.2, resPt.y + 4);
+        ctx.lineTo(resPt.x + w*0.2, resPt.y - 4);
+        ctx.lineTo(resPt.x + w*0.6, resPt.y + 4);
+        ctx.lineTo(resPt.x + w, resPt.y);
+        ctx.stroke();
+      }
       
       points.forEach((pt, i) => {
         const node = nodes[i];

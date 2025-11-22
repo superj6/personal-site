@@ -59,18 +59,20 @@ function createSymbolicExecutionDiagram(){
       ctx.shadowBlur = 14;
       ctx.shadowColor = util.neonColor;
 
-      const lineAlpha = 0.25 + 0.4 * stage.lightBoost;
-      ctx.strokeStyle = util.rgbaString(util.neonRgb, lineAlpha);
-      ctx.lineWidth = 0.8 + 0.3 * stage.lightBoost;
-      
-      edges.forEach(([a, b]) => {
-        const pa = points[a];
-        const pb = points[b];
-        ctx.beginPath();
-        ctx.moveTo(pa.x, pa.y);
-        ctx.lineTo(pb.x, pb.y);
-        ctx.stroke();
-      });
+      if(stage.stage !== 'assembling'){
+        const lineAlpha = 0.25 + 0.4 * stage.lightBoost;
+        ctx.strokeStyle = util.rgbaString(util.neonRgb, lineAlpha);
+        ctx.lineWidth = 0.8 + 0.3 * stage.lightBoost;
+        
+        edges.forEach(([a, b]) => {
+          const pa = points[a];
+          const pb = points[b];
+          ctx.beginPath();
+          ctx.moveTo(pa.x, pa.y);
+          ctx.lineTo(pb.x, pb.y);
+          ctx.stroke();
+        });
+      }
 
       points.forEach((pt) => {
         const glow = 0.4 + 0.5 * stage.lightBoost;
