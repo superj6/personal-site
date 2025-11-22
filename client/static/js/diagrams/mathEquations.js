@@ -175,6 +175,7 @@ function createMathEquationsDiagram(){
     render(ctx, util, assigned, stage){
       const points = assigned.map((slot) => ({x: slot.star.x, y: slot.star.y}));
       const alpha = stage.fadeAlpha;
+      const time = util.time || 0;
 
       ctx.save();
       ctx.globalAlpha = alpha;
@@ -182,22 +183,56 @@ function createMathEquationsDiagram(){
       ctx.shadowColor = util.neonColor;
 
       if(stage.stage !== 'assembling'){
-        ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.4 + 0.5 * stage.lightBoost);
+        const lineColor = util.rgbaString(util.neonRgb, 0.4 + 0.5 * stage.lightBoost);
+        ctx.strokeStyle = lineColor;
         ctx.lineWidth = 2.0;
         
-        connections.forEach(([a, b]) => {
+        connections.forEach(([a, b], idx) => {
+          const ax = points[a].x;
+          const ay = points[a].y;
+          const bx = points[b].x;
+          const by = points[b].y;
           ctx.beginPath();
-          ctx.moveTo(points[a].x, points[a].y);
-          ctx.lineTo(points[b].x, points[b].y);
+          ctx.moveTo(ax, ay);
+          ctx.lineTo(bx, by);
           ctx.stroke();
+
+          // Traveling neon highlight along the segment
+          const progress = ((time * 0.00025) + idx * 0.18) % 1;
+          const length = 0.25; // portion of the segment
+          const drawHighlight = (startT) => {
+            const endT = Math.min(startT + length, 1);
+            const hx1 = ax + (bx - ax) * startT;
+            const hy1 = ay + (by - ay) * startT;
+            const hx2 = ax + (bx - ax) * endT;
+            const hy2 = ay + (by - ay) * endT;
+            ctx.save();
+            ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.65 + 0.35 * stage.lightBoost);
+            ctx.lineWidth = 3;
+            ctx.shadowBlur = 28;
+            ctx.shadowColor = util.neonColor;
+            ctx.beginPath();
+            ctx.moveTo(hx1, hy1);
+            ctx.lineTo(hx2, hy2);
+            ctx.stroke();
+            ctx.restore();
+            return endT;
+          };
+
+          const endT = drawHighlight(progress);
+          if(progress + length > 1){
+            drawHighlight(0);
+          }
         });
       }
 
-      points.forEach((pt) => {
-        const glow = 0.5 + 0.5 * stage.lightBoost;
+      points.forEach((pt, idx) => {
+        const pulse = Math.sin(time * 0.004 + idx * 0.8) * 0.5 + 0.5;
+        const size = 2.0 + pulse * 1.8;
+        const glow = 0.45 + 0.55 * Math.max(stage.lightBoost, pulse);
         ctx.fillStyle = util.rgbaString(util.neonRgb, glow);
         ctx.beginPath();
-        ctx.arc(pt.x, pt.y, 2.5, 0, Math.PI * 2);
+        ctx.arc(pt.x, pt.y, size, 0, Math.PI * 2);
         ctx.fill();
       });
 

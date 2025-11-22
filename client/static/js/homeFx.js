@@ -41,8 +41,8 @@
         connect: 900,
         hold: 3200,
         fade: 1200,
-        firstLoopDelay: 20000,
-        subsequentLoopDelay: 40000
+        firstLoopDelay: 15000,
+        subsequentLoopDelay: 15000
       };
       this.stars = createStarsEngine(this.starConfig);
       this.activeDiagram = null;
