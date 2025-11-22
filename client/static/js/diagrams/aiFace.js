@@ -19,7 +19,7 @@ window.createAiFaceDiagram = function(){
     return out;
   };
 
-  // --- 1. EYES (High Detail Anime Style) ---
+  // --- 1. EYES (Simple with Star Pupils) ---
   
   // Helper: Create Star Pupil
   const createStar = (cx, cy, r) => {
@@ -36,77 +36,56 @@ window.createAiFaceDiagram = function(){
   };
   
   // 1. Pupils (The Stars) - Focal point
-  shapes.push({pts: createStar(0.37, 0.40, 0.11), closed: true, twinkle: true});
-  shapes.push({pts: createStar(0.63, 0.40, 0.11), closed: true, twinkle: true});
+  shapes.push({pts: createStar(0.38, 0.42, 0.09), closed: true, twinkle: true});
+  shapes.push({pts: createStar(0.62, 0.42, 0.09), closed: true, twinkle: true});
 
-  // 2. Iris Outlines (Circles around stars)
-  const irisL = []; const irisR = [];
-  for(let i=0; i<=16; i++){
-    const t = i/16; const a = t * Math.PI * 2;
-    irisL.push({x: 0.37 + Math.cos(a)*0.13, y: 0.40 + Math.sin(a)*0.13});
-    irisR.push({x: 0.63 + Math.cos(a)*0.13, y: 0.40 + Math.sin(a)*0.13});
-  }
-  shapes.push({pts: irisL, closed: true});
-  shapes.push({pts: irisR, closed: true});
+  // 2. Simple Eye Outlines
+  shapes.push({pts: subdivide([{x:0.28, y:0.42}, {x:0.33, y:0.38}, {x:0.38, y:0.36}, {x:0.43, y:0.38}, {x:0.48, y:0.42}], 5), closed: false});
+  shapes.push({pts: subdivide([{x:0.28, y:0.42}, {x:0.33, y:0.44}, {x:0.38, y:0.45}, {x:0.43, y:0.44}, {x:0.48, y:0.42}], 5), closed: false});
+  
+  shapes.push({pts: subdivide([{x:0.52, y:0.42}, {x:0.57, y:0.38}, {x:0.62, y:0.36}, {x:0.67, y:0.38}, {x:0.72, y:0.42}], 5), closed: false});
+  shapes.push({pts: subdivide([{x:0.52, y:0.42}, {x:0.57, y:0.44}, {x:0.62, y:0.45}, {x:0.67, y:0.44}, {x:0.72, y:0.42}], 5), closed: false});
 
-  // 3. Thick Upper Lashes (Multiple lines for weight)
-  const lashL1 = [{x:0.24, y:0.38}, {x:0.28, y:0.30}, {x:0.37, y:0.26}, {x:0.46, y:0.30}, {x:0.50, y:0.38}];
-  const lashL2 = [{x:0.24, y:0.39}, {x:0.28, y:0.31}, {x:0.37, y:0.27}, {x:0.46, y:0.31}, {x:0.50, y:0.39}]; // Thickness
-  const lashL3 = [{x:0.23, y:0.37}, {x:0.25, y:0.32}, {x:0.28, y:0.30}]; // Wing tip
-  shapes.push({pts: subdivide(lashL1, 6), closed: false});
-  shapes.push({pts: subdivide(lashL2, 6), closed: false});
-  shapes.push({pts: subdivide(lashL3, 3), closed: false});
-
-  const lashR1 = [{x:0.50, y:0.38}, {x:0.54, y:0.30}, {x:0.63, y:0.26}, {x:0.72, y:0.30}, {x:0.76, y:0.38}];
-  const lashR2 = [{x:0.50, y:0.39}, {x:0.54, y:0.31}, {x:0.63, y:0.27}, {x:0.72, y:0.31}, {x:0.76, y:0.39}];
-  const lashR3 = [{x:0.77, y:0.37}, {x:0.75, y:0.32}, {x:0.72, y:0.30}]; // Wing tip
-  shapes.push({pts: subdivide(lashR1, 6), closed: false});
-  shapes.push({pts: subdivide(lashR2, 6), closed: false});
-  shapes.push({pts: subdivide(lashR3, 3), closed: false});
-
-  // 4. Double Eyelid Crease
-  shapes.push({pts: subdivide([{x:0.26, y:0.28}, {x:0.37, y:0.23}, {x:0.48, y:0.28}], 6), closed: false});
-  shapes.push({pts: subdivide([{x:0.52, y:0.28}, {x:0.63, y:0.23}, {x:0.74, y:0.28}], 6), closed: false});
-
-  // 5. Eyebrows (Expressive)
-  shapes.push({pts: subdivide([{x:0.26, y:0.24}, {x:0.35, y:0.20}, {x:0.46, y:0.24}], 5), closed: false});
-  shapes.push({pts: subdivide([{x:0.54, y:0.24}, {x:0.65, y:0.20}, {x:0.74, y:0.24}], 5), closed: false});
+  // 3. Eyebrows (Thicker, masculine)
+  shapes.push({pts: subdivide([{x:0.28, y:0.30}, {x:0.35, y:0.27}, {x:0.45, y:0.30}], 5), closed: false});
+  shapes.push({pts: subdivide([{x:0.28, y:0.31}, {x:0.35, y:0.28}, {x:0.45, y:0.31}], 3), closed: false});
+  
+  shapes.push({pts: subdivide([{x:0.55, y:0.30}, {x:0.65, y:0.27}, {x:0.72, y:0.30}], 5), closed: false});
+  shapes.push({pts: subdivide([{x:0.55, y:0.31}, {x:0.65, y:0.28}, {x:0.72, y:0.31}], 3), closed: false});
 
 
   // --- 2. NOSE & MOUTH ---
-  // Small Nose (Dot/Dash style)
-  shapes.push({pts: [{x:0.50, y:0.53}, {x:0.49, y:0.55}], closed: false}); 
+  // Simple Nose
+  shapes.push({pts: [{x:0.50, y:0.55}, {x:0.48, y:0.58}, {x:0.52, y:0.58}], closed: false}); 
 
-  // Refined Mouth
-  shapes.push({pts: subdivide([{x:0.43, y:0.65}, {x:0.50, y:0.68}, {x:0.57, y:0.65}], 5), closed: false});
-  // Lower lip hint
-  shapes.push({pts: subdivide([{x:0.48, y:0.70}, {x:0.52, y:0.70}], 2), closed: false});
+  // Mouth (subtle)
+  shapes.push({pts: subdivide([{x:0.43, y:0.68}, {x:0.50, y:0.70}, {x:0.57, y:0.68}], 5), closed: false});
 
 
-  // --- 3. FACE CONTOUR ---
+  // --- 3. FACE CONTOUR (Narrower) ---
   const face = [
-    {x: 0.28, y: 0.35}, // Temple
-    {x: 0.28, y: 0.55}, // Cheek
-    {x: 0.35, y: 0.75}, // Jaw start
-    {x: 0.50, y: 0.88}, // Chin
-    {x: 0.65, y: 0.75}, 
-    {x: 0.72, y: 0.55}, 
-    {x: 0.72, y: 0.35}
+    {x: 0.30, y: 0.32}, // Temple
+    {x: 0.30, y: 0.55}, // Cheek
+    {x: 0.35, y: 0.72}, // Jaw angle
+    {x: 0.43, y: 0.85}, // Jaw to chin
+    {x: 0.50, y: 0.90}, // Chin
+    {x: 0.57, y: 0.85}, 
+    {x: 0.65, y: 0.72}, // Jaw angle
+    {x: 0.70, y: 0.55}, 
+    {x: 0.70, y: 0.32}
   ];
   shapes.push({pts: subdivide(face, 6), closed: false});
 
 
-  // --- 4. HAIR (Flowing Web) ---
+  // --- 4. HAIR (Messy Left Sweep) ---
   const hairNodes = [];
   
   const addFlowingHair = (startX, startY, endX, endY, count, spread) => {
     for(let i=0; i<count; i++){
       const t = i/count;
-      // Main flow path
       const bx = startX + (endX - startX) * t;
       const by = startY + (endY - startY) * t;
       
-      // Add jittered points around this path
       const density = 3; 
       for(let j=0; j<density; j++){
         hairNodes.push({
@@ -117,32 +96,36 @@ window.createAiFaceDiagram = function(){
     }
   };
 
-  // Left Side Flow
-  addFlowingHair(0.25, 0.15, 0.15, 0.95, 20, 0.08); // Outer
-  addFlowingHair(0.30, 0.25, 0.25, 0.90, 18, 0.06); // Mid
-  addFlowingHair(0.32, 0.35, 0.30, 0.85, 15, 0.04); // Inner (Face framing)
+  // Right to left sweep (main volume)
+  addFlowingHair(0.70, 0.15, 0.25, 0.25, 22, 0.06);
+  addFlowingHair(0.68, 0.18, 0.28, 0.28, 20, 0.05);
+  addFlowingHair(0.66, 0.20, 0.30, 0.30, 18, 0.05);
+  addFlowingHair(0.64, 0.23, 0.32, 0.32, 16, 0.04);
+  addFlowingHair(0.62, 0.26, 0.34, 0.34, 14, 0.04);
 
-  // Right Side Flow
-  addFlowingHair(0.75, 0.15, 0.85, 0.95, 20, 0.08); // Outer
-  addFlowingHair(0.70, 0.25, 0.75, 0.90, 18, 0.06); // Mid
-  addFlowingHair(0.68, 0.35, 0.70, 0.85, 15, 0.04); // Inner
+  // Top-front sweep
+  addFlowingHair(0.60, 0.22, 0.35, 0.30, 16, 0.05);
+  addFlowingHair(0.58, 0.25, 0.38, 0.32, 14, 0.04);
+  addFlowingHair(0.56, 0.28, 0.40, 0.34, 12, 0.03);
 
-  // Bangs (M-Shape Flow)
-  // Left
-  addFlowingHair(0.25, 0.20, 0.35, 0.38, 10, 0.04);
-  addFlowingHair(0.35, 0.10, 0.40, 0.35, 10, 0.04);
-  // Center
-  addFlowingHair(0.45, 0.15, 0.50, 0.30, 8, 0.03); // Tip
-  addFlowingHair(0.55, 0.15, 0.50, 0.30, 8, 0.03);
-  // Right
-  addFlowingHair(0.65, 0.10, 0.60, 0.35, 10, 0.04);
-  addFlowingHair(0.75, 0.20, 0.65, 0.38, 10, 0.04);
-
-  // Top Volume
-  addFlowingHair(0.25, 0.15, 0.75, 0.15, 15, 0.08); // Horizontal filler
+  // Right side (behind part)
+  addFlowingHair(0.72, 0.20, 0.72, 0.50, 16, 0.04);
+  addFlowingHair(0.70, 0.25, 0.70, 0.52, 14, 0.03);
+  
+  // Left side (destination)
+  addFlowingHair(0.28, 0.25, 0.28, 0.55, 16, 0.05);
+  addFlowingHair(0.26, 0.23, 0.26, 0.52, 14, 0.04);
+  addFlowingHair(0.30, 0.28, 0.30, 0.56, 12, 0.03);
 
   shapes.push({pts: hairNodes, type: 'web', closed: false});
 
+
+  const centerY = 0.5;
+  const scaleY = 1.12;
+  const remapY = (y) => {
+    const stretched = centerY + (y - centerY) * scaleY;
+    return Math.min(0.97, Math.max(0.03, stretched));
+  };
 
   // --- Flatten ---
   const nodes = [];
@@ -152,9 +135,9 @@ window.createAiFaceDiagram = function(){
 
   shapes.forEach(shape => {
     if(shape.type === 'web'){
-      // Web Logic with VERTICAL BIAS
-      shape.pts.forEach(p => nodes.push(p));
-      const localNodes = shape.pts;
+      // Chaotic web mesh with horizontal bias for left sweep
+      const localNodes = shape.pts.map(p => ({x: p.x, y: remapY(p.y)}));
+      localNodes.forEach(p => nodes.push(p));
       const threshold = 0.07; 
       
       for(let i=0; i<localNodes.length; i++){
@@ -164,22 +147,21 @@ window.createAiFaceDiagram = function(){
           const dy = Math.abs(localNodes[i].y - localNodes[j].y);
           const dist = Math.sqrt(dx*dx + dy*dy);
           
-          // Prefer vertical connections (dy > dx) for hair flow look
-          // Stricter distance for horizontal
+          // Prefer horizontal connections (dx > dy) for left-swept look
           if(dist < threshold){
-             if(dy > dx * 0.5 || dist < threshold * 0.6){
+             if(dx > dy * 0.4 || dist < threshold * 0.65){
                 connections.push([offset + i, offset + j]);
                 connectionsCount++;
              }
           }
-          if(connectionsCount > 3) break; // Limit connections per node
+          if(connectionsCount > 3) break;
         }
       }
       offset += localNodes.length;
     } else {
       // Standard Path Logic
       shape.pts.forEach((p, i) => {
-        nodes.push(p);
+        nodes.push({x: p.x, y: remapY(p.y)});
         if(shape.twinkle) twinklingIndices.push(offset + i);
       });
       for(let i=0; i<shape.pts.length-1; i++){
