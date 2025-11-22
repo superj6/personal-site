@@ -121,6 +121,53 @@ function createChipCircuitDiagram(){
         ctx.lineTo(resPt.x + w*0.6, resPt.y + 4);
         ctx.lineTo(resPt.x + w, resPt.y);
         ctx.stroke();
+
+        // CPU badge in upper-right corner
+        const cpuRect = {
+          x: util.canvasWidth * 0.78,
+          y: util.canvasHeight * 0.08,
+          w: util.canvasWidth * 0.12,
+          h: util.canvasHeight * 0.08
+        };
+        ctx.save();
+        ctx.lineWidth = 1.2;
+        ctx.strokeStyle = util.rgbaString(util.neonRgb, 0.45 + 0.4 * stage.lightBoost);
+        ctx.shadowBlur = 18;
+        ctx.shadowColor = util.neonColor;
+        ctx.beginPath();
+        ctx.rect(cpuRect.x, cpuRect.y, cpuRect.w, cpuRect.h);
+        ctx.stroke();
+        // Inner border
+        ctx.beginPath();
+        ctx.rect(cpuRect.x + 6, cpuRect.y + 6, cpuRect.w - 12, cpuRect.h - 12);
+        ctx.stroke();
+        // Pins
+        const pinCount = 5;
+        for(let i=0; i<pinCount; i++){
+          const t = i/(pinCount-1);
+          const px = cpuRect.x + (cpuRect.w * t);
+          const topY = cpuRect.y;
+          const bottomY = cpuRect.y + cpuRect.h;
+          ctx.beginPath();
+          ctx.moveTo(px, topY);
+          ctx.lineTo(px, topY - 8);
+          ctx.moveTo(px, bottomY);
+          ctx.lineTo(px, bottomY + 8);
+          ctx.stroke();
+        }
+        for(let i=0; i<pinCount; i++){
+          const t = i/(pinCount-1);
+          const py = cpuRect.y + (cpuRect.h * t);
+          const leftX = cpuRect.x;
+          const rightX = cpuRect.x + cpuRect.w;
+          ctx.beginPath();
+          ctx.moveTo(leftX, py);
+          ctx.lineTo(leftX - 8, py);
+          ctx.moveTo(rightX, py);
+          ctx.lineTo(rightX + 8, py);
+          ctx.stroke();
+        }
+        ctx.restore();
       }
       
       points.forEach((pt, i) => {
