@@ -41,8 +41,8 @@
         connect: 900,
         hold: 3200,
         fade: 1200,
-        firstLoopDelay: 30000,
-        subsequentLoopDelay: 60000
+        firstLoopDelay: 20000,
+        subsequentLoopDelay: 40000
       };
       this.stars = createStarsEngine(this.starConfig);
       this.activeDiagram = null;
@@ -340,23 +340,6 @@
     return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
   }
 
-  function randomRange(min, max){
-    return Math.random() * (max - min) + min;
-  }
-
-  function randomPosition(){
-    return {x: Math.random(), y: Math.random()};
-  }
-
-  function takeRandom(array, count){
-    const clone = array.slice();
-    for(let i = clone.length - 1; i > 0; i--){
-      const j = Math.floor(Math.random() * (i + 1));
-      [clone[i], clone[j]] = [clone[j], clone[i]];
-    }
-    return clone.slice(0, count);
-  }
-
   function clamp(value, min, max){
     return Math.min(Math.max(value, min), max);
   }
@@ -370,13 +353,5 @@
       x: lerp(a.x, b.x, t),
       y: lerp(a.y, b.y, t)
     };
-  }
-
-  function easeInOutCubic(t){
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  }
-
-  function easeOutCubic(t){
-    return 1 - Math.pow(1 - t, 3);
   }
 })();
