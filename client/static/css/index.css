@@ -5,6 +5,11 @@ body{
   overflow-x: hidden;
 }
 
+:root{
+  --home-neon: #ff8c32;
+  --home-title-base-shadow: 1px 1px 16px blueviolet;
+}
+
 .default-styles{
   color: mistyrose;
   background-color: black;
@@ -310,8 +315,21 @@ body{
   background-position: center center;
   position: sticky;
   top: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   max-width: 100vw;
+}
+
+.home-intro--fx-layer{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-intro--fx-canvas{
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .home-intro--scroll-message{
@@ -330,6 +348,8 @@ body{
   background-color: rgba(0, 0, 0, 0.8);
   max-width: 90vw;
   margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .home-panel a:hover{
@@ -345,6 +365,39 @@ body{
 
 .home-panel--title > a{
   text-decoration: none;
+}
+
+.home-panel--title-link{
+  color: inherit;
+  animation: home-panel-title-pulse 2.6s ease-out 2s 1;
+  text-shadow: var(--home-title-base-shadow);
+  -webkit-text-stroke: 0px transparent;
+}
+
+@keyframes home-panel-title-pulse{
+  0%{
+    text-shadow: var(--home-title-base-shadow);
+    -webkit-text-stroke: 0px transparent;
+  }
+
+  35%{
+    text-shadow: var(--home-title-base-shadow), 0 0 4px rgba(255, 140, 50, 0.9), 0 0 12px rgba(255, 140, 50, 0.6);
+    -webkit-text-stroke: 1px rgba(255, 140, 50, 0.9);
+  }
+
+  60%{
+    text-shadow: var(--home-title-base-shadow), 0 0 6px rgba(255, 140, 50, 1), 0 0 24px rgba(255, 140, 50, 0.85), 0 0 34px rgba(255, 140, 50, 0.45);
+    -webkit-text-stroke: 1.5px rgba(255, 140, 50, 0.95);
+  }
+
+  100%{
+    text-shadow: var(--home-title-base-shadow);
+    -webkit-text-stroke: 0px transparent;
+  }
+}
+
+.home-intro--scroll-message{
+  z-index: 1;
 }
 
 .home-panel--nav-list{
@@ -585,9 +638,6 @@ body{
   padding: 0;
 }
 
-.blog-preview-list > li{
-}
-
 .blog-preview-list .blog-title-link{
   color: blueviolet;
 }
@@ -601,13 +651,13 @@ body{
 }
 
 .blog-post{
-  width: 60vw;
-  max-width: 60rem;
+  width: 55vw;
+  max-width: 52rem;
 }
 
 .blog-article{
-  width: 60vw;
-  max-width: 60rem;
+  width: 55vw;
+  max-width: 52rem;
 }
 
 .blog-article h1{
@@ -630,6 +680,26 @@ body{
 .blog-article img{
   max-height: 40vh;
   max-width: 95%;
+}
+
+.blog-article--body{
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  margin-top: 1.25rem;
+}
+
+.blog-article--body > *:first-child{
+  margin-top: 0;
+}
+
+.blog-article--body p{
+  margin: 1rem 0;
+}
+
+.blog-article--body ul,
+.blog-article--body ol{
+  margin: 1rem 0 1.25rem;
+  padding-left: 1.75rem;
 }
 
 @media (max-width: 50rem){
