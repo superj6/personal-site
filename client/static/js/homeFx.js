@@ -17,6 +17,9 @@
     if(typeof createMathEquationsDiagram === 'function'){
       DIAGRAM_LIBRARY.push(createMathEquationsDiagram());
     }
+    if(typeof createPineHillDiagram === 'function'){
+      DIAGRAM_LIBRARY.push(createPineHillDiagram());
+    }
     if(typeof createAiFaceDiagram === 'function'){
       // Store this globally or on a static property so we can access it for the secret key
       window.SECRET_AI_FACE_DIAGRAM = createAiFaceDiagram();
