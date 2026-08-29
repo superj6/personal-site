@@ -798,6 +798,26 @@ body{
   color: mistyrose;
 }
 
+/* Honeypot: off-screen rather than display:none so naive bots still "see" it. */
+.comments-section--hp{
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.comments-section--error{
+  margin: 0.5rem 0 0;
+  color: #e88;
+  font-size: 0.9rem;
+}
+
+.cf-turnstile{
+  margin: 0.5rem 0;
+}
+
 .comments-section--form-wrapper button:hover{
   background-color: #222;
 }

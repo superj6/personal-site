@@ -1,14 +1,26 @@
-<% comments.sort((x, y) => y.date - x.date) %>
 <section id="<%= slug %>" class="comments-section">
   <h2>Comments</h2>
   <dl>
-    <dt><%= comments.length %></dt>
+    <dt><%= commentsTotal %></dt>
   </dl>
   <form action="/api/addcomment?<%= new URLSearchParams({redirect: `${redirect}#${slug}`}) %>" method="post" class="comments-section--form-wrapper">
     <input type="hidden" name="slug" value="<%= slug %>" />
-    <input type="text" name="username" class="comments-section--form-input" placeholder="Name" required />
+    <input type="hidden" name="_t" value="<%= commentToken %>" />
+    <%# Honeypot: hidden from people, bots fill it in. Must stay empty. %>
+    <div class="comments-section--hp" aria-hidden="true">
+      <label for="comment-website">Website</label>
+      <input type="text" id="comment-website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+    <input type="text" name="username" class="comments-section--form-input" placeholder="Name" maxlength="40" required />
     <textarea name="content" class="comments-section--form-input" maxlength="250" placeholder="Your comment (w/ markdown, maxchars 250)" required></textarea>
+    <% if(turnstileSiteKey){ %>
+      <div class="cf-turnstile" data-sitekey="<%= turnstileSiteKey %>" data-theme="dark" data-size="flexible"></div>
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <% } %>
     <button type="submit">Send</button>
+    <% if(commentError){ %>
+      <p class="comments-section--error">Comment not posted, sorry. Wait a moment and try again.</p>
+    <% } %>
   </form>
   <ul class="comments-section--comments-list">
     <% if(comments.length > 0){
@@ -25,6 +37,12 @@
       </li>
     <%  
         });
+         if(commentsTotal > comments.length){
+    %>
+      <li>
+        <p>Showing the latest <%= comments.length %> of <%= commentsTotal %> comments.</p>
+      </li>
+    <%  }
       }else{ 
     %>
       <li>

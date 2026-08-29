@@ -6,6 +6,7 @@ const mdHelper = require('../components/md');
 const blogHelper = require('../components/blog');
 const projectsHelper = require('../components/projects');
 const commentHelper = require('../components/comments');
+const spam = require('../components/spam');
 const resumeHelper = require('../components/resume.js');
 
 const router = express.Router();
@@ -40,14 +41,18 @@ router.get('/blog', (req, res) => {
 
 router.get('/blog/:slug', (req, res, next) => {
   blogHelper.getBlog(req.params.slug, (e, blog) => {
-    if(e) next();
-    commentHelper.getComments(blog.meta.commentsSlug, (e, comments) => {	
+    if(e) return next();
+    commentHelper.getComments(blog.meta.commentsSlug, (e, result) => {
+      if(e) return next(e);
       res.render('blog-post', {
-	md: mdHelper.mdRender(true, false),
+	md: mdHelper.mdRender(true, false, true),
 	mdAnc: mdHelper.mdRender(false, true),
 	slugify: mdHelper.slugify, 
 	blog: blog,
-	comments: comments
+	comments: result.comments,
+	commentsTotal: result.total,
+	commentToken: spam.makeToken(),
+	commentError: Boolean(req.query.commentError)
       });
     });	
   });
